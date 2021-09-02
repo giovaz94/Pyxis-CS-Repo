@@ -1,3 +1,4 @@
+using Antonioni.Arena;
 using Antonioni.Level.Status;
 
 namespace Antonioni.Level
@@ -17,6 +18,8 @@ namespace Antonioni.Level
         void IncreaseScore(int score);
 
         LevelStatus GetLevelStatus();
+
+        IArena GetArena();
 
         void SetLevelStatus(LevelStatus status);
 

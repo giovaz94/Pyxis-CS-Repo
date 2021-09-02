@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antonioni", "Antonioni\Antonioni.csproj", "{1CBB3CD4-9878-4292-AD50-9BF74090E0C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{12AE31AA-A01C-41AA-B463-A1712D695FB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{B24664F8-8514-4F8B-BED3-1286378DB7A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		{1CBB3CD4-9878-4292-AD50-9BF74090E0C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CBB3CD4-9878-4292-AD50-9BF74090E0C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CBB3CD4-9878-4292-AD50-9BF74090E0C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12AE31AA-A01C-41AA-B463-A1712D695FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12AE31AA-A01C-41AA-B463-A1712D695FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12AE31AA-A01C-41AA-B463-A1712D695FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12AE31AA-A01C-41AA-B463-A1712D695FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B24664F8-8514-4F8B-BED3-1286378DB7A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B24664F8-8514-4F8B-BED3-1286378DB7A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B24664F8-8514-4F8B-BED3-1286378DB7A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B24664F8-8514-4F8B-BED3-1286378DB7A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
