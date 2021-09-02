@@ -5,8 +5,6 @@ namespace Antonioni.Level
 {
     public interface ILevel
     {
-        void CleanUp();
-
         void DecreaseLife();
 
         int GetLevelNumber();
