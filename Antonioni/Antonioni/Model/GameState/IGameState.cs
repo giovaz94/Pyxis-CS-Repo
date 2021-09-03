@@ -6,6 +6,8 @@ namespace Antonioni.GameState
 {
     public interface IGameState
     {
+        ILevel GetLevel();
+        
         StateEnum GetState();
 
         void SetState(StateEnum stateEnum);
