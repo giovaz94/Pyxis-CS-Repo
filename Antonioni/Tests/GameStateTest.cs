@@ -7,6 +7,12 @@ namespace Tests
     public class GameStateTest
     {
         private IGameState TestingGameState { get; set; }
+
+        [SetUp]
+        public void Setup()
+        {
+            this.TestingGameState = new GameState();
+        }
         
         [Test]
         public void TestInitialGameStateConfiguration()
@@ -17,7 +23,6 @@ namespace Tests
         [Test]
         public void TestSwitchState()
         {
-            Assert.AreEqual(StateEnum.WaitingForNewGame, TestingGameState.GetState());
             TestingGameState.SetState(StateEnum.WaitingForStartingCommand);
             Assert.AreEqual(StateEnum.WaitingForStartingCommand, TestingGameState.GetState());
             TestingGameState.SetState(StateEnum.Run);
