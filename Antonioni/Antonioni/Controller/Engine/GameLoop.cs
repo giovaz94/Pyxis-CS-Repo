@@ -13,8 +13,14 @@ namespace Antonioni.Controller.Engine
     {
         private const long Period = 1000;
         private readonly ConcurrentQueue<ICommand<ILevel>> _commandQueue = new ConcurrentQueue<ICommand<ILevel>>();
-        private readonly ILinker _inputLinker = new Linker.Linker();
+        private readonly ILinker _inputLinker;
 
+        public GameLoop()
+        {
+            this._inputLinker = new Linker.Linker();
+            this._inputLinker.GetGameState().SetState(StateEnum.Run);
+        }
+        
         private void WaitForNextFrame(long current)
         {
             long dt = DateTimeOffset.Now.ToUnixTimeMilliseconds() - current;
@@ -26,6 +32,8 @@ namespace Antonioni.Controller.Engine
         
         public void Run()
         {
+            Console.WriteLine("GameLoop Started !");
+            
             long lastTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             IGameState gState = this._inputLinker.GetGameState();
             while (gState.GetState() != StateEnum.Stop)
