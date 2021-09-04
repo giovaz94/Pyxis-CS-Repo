@@ -10,9 +10,9 @@ namespace Antonioni.Controller.Engine
         void ProcessInput();
 
         void Render();
-
-        void Start();
-
+        
+        void Run();
+        
         void Update(double elapsed);
     }
 }
