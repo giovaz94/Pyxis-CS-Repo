@@ -21,6 +21,11 @@ namespace Antonioni.Controller.Engine
             this._inputLinker.GetGameState().SetState(StateEnum.Run);
         }
         
+        /// <summary>
+        /// Apply a sleep on the current thread based on the time used by the gameloop for
+        /// complete a frame.
+        /// </summary>
+        /// <param name="current"> The start time of the frame </param>
         private void WaitForNextFrame(long current)
         {
             long dt = DateTimeOffset.Now.ToUnixTimeMilliseconds() - current;

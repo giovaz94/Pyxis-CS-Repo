@@ -8,6 +8,10 @@ namespace Antonioni.Arena
     /// </summary>
     public interface IArena
     {
+        /// <summary>
+        /// Update the current Arena
+        /// </summary>
+        /// <param name="delta"> Elapsed time</param>
         void Update(double delta);
     }
 }
