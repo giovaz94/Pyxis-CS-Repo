@@ -13,5 +13,6 @@ namespace Traini.Model.Element
         ICoord Position { get; set; }
         IDimension Dimension { get; set; }
         IHitbox Hitbox { get; set; }
+        IVector Pace { get; set; }
     }
 }

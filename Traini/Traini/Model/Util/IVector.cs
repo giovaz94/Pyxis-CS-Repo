@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Traini.Model.Util
 {
-    interface ICoord
+    interface IVector
     {
         double X { get; set; }
         double Y { get; set; }
-        double Distance(ICoord coord);
-        double Distance(double px, double py);
     }
 }

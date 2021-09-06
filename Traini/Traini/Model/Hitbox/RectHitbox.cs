@@ -16,8 +16,8 @@ namespace Traini.Model.Hitbox
         private double ClosestPointComponentCalculation(double sHBCenterValue, double fHBCenterValue, double rHBEdgeLength)
         {
             return sHBCenterValue < fHBCenterValue - rHBEdgeLength / 2
-                ? fHBCenterValue - rHBEdgeLength / 2
-                : Math.Min(sHBCenterValue, fHBCenterValue + rHBEdgeLength / 2);
+                    ? fHBCenterValue - rHBEdgeLength / 2
+                    : Math.Min(sHBCenterValue, fHBCenterValue + rHBEdgeLength / 2);
         }
         public override ICollisionInformation CollidingInformationWithHB(IHitbox hitbox)
         {
