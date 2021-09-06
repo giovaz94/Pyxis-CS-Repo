@@ -8,5 +8,7 @@ namespace Traini.Model.Util
 {
     interface IDimension
     {
+        double Width { get; set; }
+        double Height { get; set; }
     }
 }

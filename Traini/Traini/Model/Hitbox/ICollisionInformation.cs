@@ -9,7 +9,7 @@ namespace Traini.Model.Hitbox
 {
     interface ICollisionInformation
     {
-        IDimension CollisionOffset { get; }
         HitEdge HitEdge { get; set; }
+        IDimension CollisionOffset { get; }
     }
 }

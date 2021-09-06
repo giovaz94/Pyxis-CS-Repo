@@ -17,7 +17,7 @@ namespace Traini.Model.Hitbox
         bool IsCollidingWithLowerBorder(IDimension borderDimension);
         bool IsCollidingWithPoint(ICoord position);
         bool IsCollidingWithPoint(double px, double py);
-        ICollisionInformation? CollidingInformationWithBorder(IDimension borderDimension);
-        ICollisionInformation? CollidingInformationWithHB(IHitbox hitbox);
+        ICollisionInformation CollidingInformationWithBorder(IDimension borderDimension);
+        ICollisionInformation CollidingInformationWithHB(IHitbox hitbox);
     }
 }

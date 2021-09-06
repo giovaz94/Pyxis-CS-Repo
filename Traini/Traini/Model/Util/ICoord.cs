@@ -8,5 +8,7 @@ namespace Traini.Model.Util
 {
     interface ICoord
     {
+        double X { get; set; }
+        double Y { get; set; }
     }
 }
