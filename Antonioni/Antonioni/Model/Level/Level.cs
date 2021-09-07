@@ -6,63 +6,63 @@ namespace Antonioni.Level
 {
     public class Level : ILevel
     {
-        private int Lives { get; set; }
-        private IArena Arena { get; set; }
-        private LevelStatus LevelStatus { get; set; }
-        private int Score { get; set; }
-        private int LevelNumber { get; }
+        private int _lives { get; set; }
+        private IArena _arena { get; }
+        private LevelStatus _levelStatus { get; set; }
+        private int _score { get; set; }
+        private int _levelNumber { get; }
         
         public Level(IArena inputArena, int levelNumber = 1)
         {
-            this.Arena = inputArena;
-            this.LevelNumber = levelNumber;
-            this.Lives = 3;
-            this.LevelStatus = LevelStatus.Playing;
+            this._arena = inputArena;
+            this._levelNumber = levelNumber;
+            this._lives = 3;
+            this._levelStatus = LevelStatus.Playing;
         }
 
         public void DecreaseLife()
         {
-            this.Lives--;
+            this._lives--;
         }
 
         public int GetLevelNumber()
         {
-            return this.LevelNumber;
+            return this._levelNumber;
         }
 
         public int GetLives()
         {
-            return this.Lives;
+            return this._lives;
         }
 
         public int GetScore()
         {
-            return this.Score;
+            return this._score;
         }
 
         public void IncreaseScore(int score)
         {
-            this.Score += score;
+            this._score += score;
         }
 
         public LevelStatus GetLevelStatus()
         {
-            return this.LevelStatus;
+            return this._levelStatus;
         }
 
         public IArena GetArena()
         {
-            return this.Arena;
+            return this._arena;
         }
 
         public void SetLevelStatus(LevelStatus status)
         {
-            this.LevelStatus = status;
+            this._levelStatus = status;
         }
 
         public void Update(double delta)
         {
-            this.Arena.Update(delta);
+            this._arena.Update(delta);
         }
     }
 }
