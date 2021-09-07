@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Traini.Model.Hitbox;
+﻿using Traini.Model.Hitbox;
 using Traini.Model.Util;
 
 namespace Traini.Model.Element.BallElement

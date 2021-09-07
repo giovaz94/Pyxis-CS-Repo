@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Traini.Model.Element;
 using Traini.Model.Util;
-using Traini.Model.Element;
 
 namespace Traini.Model.Hitbox
 {
@@ -28,7 +23,7 @@ namespace Traini.Model.Hitbox
         /// </summary>
         /// <param name="hitbox"> The passed hitbox</param>
         /// <returns>true if they are colliding, false otherwise</returns>
-        bool IsCollidingWithHB(IHitbox hitbox);
+        bool IsCollidingWithHb(IHitbox hitbox);
 
         /// <summary>
         /// Checks for a collision with a lower border of a dimension
@@ -47,7 +42,8 @@ namespace Traini.Model.Hitbox
         /// <summary>
         /// Checks for a collision with a point
         /// </summary>
-        /// <param name="point"> The passed point</param>
+        /// <param name="px"> The passed point X value</param>
+        /// <param name="py"> The passed point Y value</param>
         /// <returns>true if they are colliding, false otherwise</returns>
         bool IsCollidingWithPoint(double px, double py);
 
@@ -65,6 +61,6 @@ namespace Traini.Model.Hitbox
         /// <param name="hitbox"> The passed border hitbox</param>
         /// <returns>A CollisionInformation with the relative information
         /// if there's a collision, null otherwise</returns>
-        ICollisionInformation CollidingInformationWithHB(IHitbox hitbox);
+        ICollisionInformation CollidingInformationWithHb(IHitbox hitbox);
     }
 }

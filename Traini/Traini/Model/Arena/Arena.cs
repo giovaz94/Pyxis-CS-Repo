@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Traini.Model.Element;
 using Traini.Model.Element.BallElement;
-using Traini.Model.Element.PadElement;
 using Traini.Model.Element.BrickElement;
+using Traini.Model.Element.PadElement;
 using Traini.Model.Element.PowerupElement;
 using Traini.Model.Util;
 
@@ -188,7 +186,7 @@ namespace Traini.Model.Arena
 
         public int GetLastBallId()
         {
-            return Math.Max(this._ballSet.Select<IBall, int>(ball => ball.Id).Max(), 0);
+            return Math.Max(this._ballSet.Select(ball => ball.Id).Max(), 0);
         }
 
         public IBall GetRandomBall()
@@ -215,7 +213,7 @@ namespace Traini.Model.Arena
             {
                 newPosition = new Coord(this.Pad.Dimension.Width / 2, this.Pad.Position.Y);
             }
-            this.Pad.Position = this.Balls.Any(b => b.Hitbox.IsCollidingWithHB(this.Pad.Hitbox))
+            this.Pad.Position = this.Balls.Any(b => b.Hitbox.IsCollidingWithHb(this.Pad.Hitbox))
                               ? oldPosition
                               : newPosition;
         }
@@ -229,7 +227,7 @@ namespace Traini.Model.Arena
             {
                 newPosition = new Coord(maxX, this.Pad.Position.Y);
             }
-            this.Pad.Position = this.Balls.Any(b => b.Hitbox.IsCollidingWithHB(this.Pad.Hitbox))
+            this.Pad.Position = this.Balls.Any(b => b.Hitbox.IsCollidingWithHb(this.Pad.Hitbox))
                               ? oldPosition
                               : newPosition;
         }
@@ -254,7 +252,7 @@ namespace Traini.Model.Arena
             var factory = new ElementFactory();
             this.Pad.Position = this.StartingPadPosition.CopyOf();
             this.ClearBalls();
-            this._ballSet.Add(factory.createBallWithRandomAngle(1, BallType.NormalBall,
+            this._ballSet.Add(factory.CreateBallWithRandomAngle(1, BallType.NormalBall,
                                         this.StartingBallPosition.CopyOf(), this.StartingBallModule));
         }
 

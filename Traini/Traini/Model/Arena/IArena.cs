@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Traini.Model.Element.BallElement;
-using Traini.Model.Element.PadElement;
 using Traini.Model.Element.BrickElement;
+using Traini.Model.Element.PadElement;
 using Traini.Model.Element.PowerupElement;
 using Traini.Model.Util;
 

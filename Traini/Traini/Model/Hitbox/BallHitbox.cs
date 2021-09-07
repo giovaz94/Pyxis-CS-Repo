@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Traini.Model.Element;
 using Traini.Model.Util;
 
@@ -33,16 +29,16 @@ namespace Traini.Model.Hitbox
         /// Calculation of the value of the closest point of the
         /// RectHitbox from the center of the BallHitbox
         /// </summary>
-        /// <param name="bHBCenterValue"> The value of the center of the BallHitbox</param>
-        /// <param name="rHBCenterValue"> The value of the center of the RectHitbox</param>
-        /// <param name="rHBEdgeLength"> The length of the edge of the RectHitbox</param>
+        /// <param name="bHbCenterValue"> The value of the center of the BallHitbox</param>
+        /// <param name="rHbCenterValue"> The value of the center of the RectHitbox</param>
+        /// <param name="rHbEdgeLength"> The length of the edge of the RectHitbox</param>
         /// <returns>bHBCenterValue if the center of the BallHitbox is inside the RectHitbox,
         /// the Coord value of the closest edge of the RectHitbox otherwise</returns>
-        private double ClosestPointComponentCalculation(double bHBCenterValue, double rHBCenterValue, double rHBEdgeLength)
+        private double ClosestPointComponentCalculation(double bHbCenterValue, double rHbCenterValue, double rHbEdgeLength)
         {
-            return bHBCenterValue < rHBCenterValue - rHBEdgeLength / 2
-                    ? rHBCenterValue - rHBEdgeLength / 2
-                    : Math.Min(bHBCenterValue, rHBCenterValue + rHBEdgeLength / 2);
+            return bHbCenterValue < rHbCenterValue - rHbEdgeLength / 2
+                    ? rHbCenterValue - rHbEdgeLength / 2
+                    : Math.Min(bHbCenterValue, rHbCenterValue + rHbEdgeLength / 2);
         }
 
         /// <summary>
@@ -58,11 +54,11 @@ namespace Traini.Model.Hitbox
             return (this.Radius - distanceFromClosestPoint) * distanceComponent / this.Radius;
         }
 
-        public override ICollisionInformation CollidingInformationWithHB(IHitbox hitbox)
+        public override ICollisionInformation CollidingInformationWithHb(IHitbox hitbox)
         {
             return hitbox is BallHitbox
-                    ? this.CollidingInformationWithSameHB(hitbox)
-                    : this.CollidingInformationWithOtherHB(hitbox);
+                    ? this.CollidingInformationWithSameHb(hitbox)
+                    : this.CollidingInformationWithOtherHb(hitbox);
         }
 
         public override bool IsCollidingWithPoint(double px, double py)
@@ -70,60 +66,60 @@ namespace Traini.Model.Hitbox
             return this.Position.Distance(px, py) <= this.Radius;
         }
 
-        protected override ICollisionInformation CollidingInformationWithOtherHB(IHitbox hitbox)
+        protected override ICollisionInformation CollidingInformationWithOtherHb(IHitbox hitbox)
         {
             double closestPointX;
             double closestPointY;
             HitEdge? hitEdge = null;
             IDimension edgeOffset = new Dimension();
-            double bHBCenterX = this.Position.X;
-            double bHBCenterY = this.Position.Y;
-            double rHBCenterX = hitbox.Position.X;
-            double rHBCenterY = hitbox.Position.Y;
-            double rHBWidth = hitbox.Dimension.Width;
-            double rHBHeight = hitbox.Dimension.Height;
+            double bHbCenterX = this.Position.X;
+            double bHbCenterY = this.Position.Y;
+            double rHbCenterX = hitbox.Position.X;
+            double rHbCenterY = hitbox.Position.Y;
+            double rHbWidth = hitbox.Dimension.Width;
+            double rHbHeight = hitbox.Dimension.Height;
 
-            closestPointX = ClosestPointComponentCalculation(bHBCenterX, rHBCenterX, rHBWidth);
-            closestPointY = ClosestPointComponentCalculation(bHBCenterY, rHBCenterY, rHBHeight);
+            closestPointX = ClosestPointComponentCalculation(bHbCenterX, rHbCenterX, rHbWidth);
+            closestPointY = ClosestPointComponentCalculation(bHbCenterY, rHbCenterY, rHbHeight);
 
-            if (closestPointX != bHBCenterX && closestPointY != bHBCenterY)
+            if (closestPointX != bHbCenterX && closestPointY != bHbCenterY)
             {
                 double distanceFromClosestPoint = this.Position.Distance(closestPointX, closestPointY);
-                edgeOffset.Width = CornerOffsetCalculation(distanceFromClosestPoint, Math.Abs(bHBCenterX - closestPointX));
-                edgeOffset.Height = CornerOffsetCalculation(distanceFromClosestPoint, Math.Abs(bHBCenterY - closestPointY));
-                if ((bHBCenterX <= rHBCenterX && this.Pace.X > 0) || (bHBCenterX > rHBCenterX && this.Pace.X < 0))
+                edgeOffset.Width = CornerOffsetCalculation(distanceFromClosestPoint, Math.Abs(bHbCenterX - closestPointX));
+                edgeOffset.Height = CornerOffsetCalculation(distanceFromClosestPoint, Math.Abs(bHbCenterY - closestPointY));
+                if ((bHbCenterX <= rHbCenterX && this.Pace.X > 0) || (bHbCenterX > rHbCenterX && this.Pace.X < 0))
                 {
                     hitEdge = HitEdge.Vertical;
                 }
-                if ((bHBCenterY <= rHBCenterY && this.Pace.Y > 0) || (bHBCenterY > rHBCenterY && this.Pace.Y < 0))
+                if ((bHbCenterY <= rHbCenterY && this.Pace.Y > 0) || (bHbCenterY > rHbCenterY && this.Pace.Y < 0))
                 {
                     hitEdge = !hitEdge.HasValue
                             ? HitEdge.Horizontal
                             : HitEdge.Corner;
                 }
             }
-            else if (closestPointX != bHBCenterX && closestPointY == bHBCenterY)
+            else if (closestPointX != bHbCenterX && closestPointY == bHbCenterY)
             {
-                edgeOffset.Width = WidthOffsetCalculation(Math.Abs(bHBCenterX - closestPointX));
+                edgeOffset.Width = WidthOffsetCalculation(Math.Abs(bHbCenterX - closestPointX));
                 hitEdge = HitEdge.Vertical;
             }
-            else if (closestPointX == bHBCenterX && closestPointY != bHBCenterY)
+            else if (closestPointX == bHbCenterX && closestPointY != bHbCenterY)
             {
-                edgeOffset.Height = HeightOffsetCalculation(Math.Abs(bHBCenterY - closestPointY));
-                hitEdge = bHBCenterY > rHBCenterY
+                edgeOffset.Height = HeightOffsetCalculation(Math.Abs(bHbCenterY - closestPointY));
+                hitEdge = bHbCenterY > rHbCenterY
                         ? HitEdge.Horizontal
                         : HitEdge.Top;
             }
             else
             {
-                if (Math.Min(bHBCenterX, rHBWidth - bHBCenterX) <= Math.Min(bHBCenterY, rHBHeight - bHBCenterY))
+                if (Math.Min(bHbCenterX, rHbWidth - bHbCenterX) <= Math.Min(bHbCenterY, rHbHeight - bHbCenterY))
                 {
-                    edgeOffset.Width = WidthOffsetCalculation(Math.Min(bHBCenterX, rHBWidth - bHBCenterX));
+                    edgeOffset.Width = WidthOffsetCalculation(Math.Min(bHbCenterX, rHbWidth - bHbCenterX));
                     hitEdge = HitEdge.Vertical;
                 }
                 else
                 {
-                    edgeOffset.Height = HeightOffsetCalculation(Math.Min(bHBCenterY, rHBHeight - bHBCenterY));
+                    edgeOffset.Height = HeightOffsetCalculation(Math.Min(bHbCenterY, rHbHeight - bHbCenterY));
                     hitEdge = HitEdge.Horizontal;
                 }
             }
@@ -132,7 +128,7 @@ namespace Traini.Model.Hitbox
                     : null;
         }
 
-        protected override ICollisionInformation CollidingInformationWithSameHB(IHitbox hitbox)
+        protected override ICollisionInformation CollidingInformationWithSameHb(IHitbox hitbox)
         {
             return this.Position.Distance(hitbox.Position) <= this.Radius + ((BallHitbox)hitbox).Radius
                     ? new CollisionInformation(HitEdge.Circle, new Dimension())

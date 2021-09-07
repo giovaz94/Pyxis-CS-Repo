@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Traini.Model.Element;
+﻿using Traini.Model.Element;
 using Traini.Model.Util;
 
 namespace Traini.Model.Hitbox
@@ -65,7 +60,7 @@ namespace Traini.Model.Hitbox
         /// <param name="hitbox"> The passed hitbox</param>
         /// <returns>A CollisionInformation with the relative information
         /// if there's a collision, null otherwise</returns>
-        protected abstract ICollisionInformation CollidingInformationWithOtherHB(IHitbox hitbox);
+        protected abstract ICollisionInformation CollidingInformationWithOtherHb(IHitbox hitbox);
 
         /// <summary>
         /// Checks for a collision with the same hitbox
@@ -73,31 +68,31 @@ namespace Traini.Model.Hitbox
         /// <param name="hitbox"> The passed hitbox</param>
         /// <returns>A CollisionInformation with the relative information
         /// if there's a collision, null otherwise</returns>
-        protected abstract ICollisionInformation CollidingInformationWithSameHB(IHitbox hitbox);
+        protected abstract ICollisionInformation CollidingInformationWithSameHb(IHitbox hitbox);
 
         public ICollisionInformation CollidingInformationWithBorder(IDimension borderDimension)
         {
-            double HBCenterX = this.Position.X;
-            double HBCenterY = this.Position.Y;
-            double HBHalvedWidth = this.Dimension.Width / 2;
-            double HBHalvedHeight = this.Dimension.Height / 2;
+            double hbCenterX = this.Position.X;
+            double hbCenterY = this.Position.Y;
+            double hbHalvedWidth = this.Dimension.Width / 2;
+            double hbHalvedHeight = this.Dimension.Height / 2;
             double borderWidth = borderDimension.Width;
             HitEdge? hitEdge = null;
             IDimension borderOffset = new Dimension();
 
-            if (CheckBorderCollision(HBCenterX, HBHalvedWidth))
+            if (CheckBorderCollision(hbCenterX, hbHalvedWidth))
             {
-                borderOffset.Width = WidthOffsetCalculation(HBCenterX);
+                borderOffset.Width = WidthOffsetCalculation(hbCenterX);
                 hitEdge = HitEdge.Vertical;
             }
-            else if (CheckBorderCollision(borderWidth - HBCenterX, HBHalvedWidth))
+            else if (CheckBorderCollision(borderWidth - hbCenterX, hbHalvedWidth))
             {
-                borderOffset.Width = WidthOffsetCalculation(borderWidth - HBCenterX);
+                borderOffset.Width = WidthOffsetCalculation(borderWidth - hbCenterX);
                 hitEdge = HitEdge.Vertical;
             }
-            if (CheckBorderCollision(HBCenterY, HBHalvedHeight))
+            if (CheckBorderCollision(hbCenterY, hbHalvedHeight))
             {
-                borderOffset.Height = HeightOffsetCalculation(HBCenterY);
+                borderOffset.Height = HeightOffsetCalculation(hbCenterY);
                 hitEdge = !hitEdge.HasValue
                             ? HitEdge.Horizontal
                             : HitEdge.Corner;
@@ -112,11 +107,11 @@ namespace Traini.Model.Hitbox
             return CheckBorderCollision(borderDimension.Height - this.Position.Y, this.Dimension.Height / 2);
         }
 
-        public abstract ICollisionInformation CollidingInformationWithHB(IHitbox hitbox);
+        public abstract ICollisionInformation CollidingInformationWithHb(IHitbox hitbox);
 
-        public bool IsCollidingWithHB(IHitbox hitbox)
+        public bool IsCollidingWithHb(IHitbox hitbox)
         {
-            return this.CollidingInformationWithHB(hitbox) != null;
+            return this.CollidingInformationWithHb(hitbox) != null;
         }
 
         public bool IsCollidingWithPoint(ICoord point)
