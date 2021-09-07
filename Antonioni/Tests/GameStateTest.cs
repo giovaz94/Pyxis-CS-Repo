@@ -6,33 +6,33 @@ namespace Tests
 {
     public class GameStateTest
     {
-        private IGameState TestingGameState { get; set; }
+        private IGameState _testingGameState { get; set; }
 
         [SetUp]
         public void Setup()
         {
-            this.TestingGameState = new GameState();
+            this._testingGameState = new GameState();
         }
         
         [Test]
         public void TestInitialGameStateConfiguration()
         {
-            Assert.AreEqual(StateEnum.WaitingForNewGame, TestingGameState.GetState());
+            Assert.AreEqual(StateEnum.WaitingForNewGame, _testingGameState.GetState());
         }
         
         [Test]
         public void TestSwitchState()
         {
-            TestingGameState.SetState(StateEnum.WaitingForStartingCommand);
-            Assert.AreEqual(StateEnum.WaitingForStartingCommand, TestingGameState.GetState());
-            TestingGameState.SetState(StateEnum.Run);
-            Assert.AreEqual(StateEnum.Run, TestingGameState.GetState());
-            TestingGameState.SetState(StateEnum.Pause);
-            Assert.AreEqual(StateEnum.Pause, TestingGameState.GetState());
-            TestingGameState.SetState(StateEnum.Stop);
-            Assert.AreEqual(StateEnum.Stop, TestingGameState.GetState());
-            TestingGameState.SetState(StateEnum.WaitingForNewGame);
-            Assert.AreEqual(StateEnum.WaitingForNewGame, TestingGameState.GetState());
+            _testingGameState.SetState(StateEnum.WaitingForStartingCommand);
+            Assert.AreEqual(StateEnum.WaitingForStartingCommand, _testingGameState.GetState());
+            _testingGameState.SetState(StateEnum.Run);
+            Assert.AreEqual(StateEnum.Run, _testingGameState.GetState());
+            _testingGameState.SetState(StateEnum.Pause);
+            Assert.AreEqual(StateEnum.Pause, _testingGameState.GetState());
+            _testingGameState.SetState(StateEnum.Stop);
+            Assert.AreEqual(StateEnum.Stop, _testingGameState.GetState());
+            _testingGameState.SetState(StateEnum.WaitingForNewGame);
+            Assert.AreEqual(StateEnum.WaitingForNewGame, _testingGameState.GetState());
         }
     }
 }
