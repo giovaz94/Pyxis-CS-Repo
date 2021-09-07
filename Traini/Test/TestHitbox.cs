@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using NUnit.Framework.Constraints;
 using Traini.Model.Element.BallElement;
 using Traini.Model.Element.PadElement;
 using Traini.Model.Hitbox;
