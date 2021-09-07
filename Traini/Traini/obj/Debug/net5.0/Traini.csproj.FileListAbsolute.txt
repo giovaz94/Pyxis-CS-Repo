@@ -1,0 +1,12 @@
+C:\Users\UTENTE\source\repos\Pyxis-CS-Repo\Traini\Traini\bin\Debug\net5.0\Traini.deps.json
+C:\Users\UTENTE\source\repos\Pyxis-CS-Repo\Traini\Traini\bin\Debug\net5.0\Traini.dll
+C:\Users\UTENTE\source\repos\Pyxis-CS-Repo\Traini\Traini\bin\Debug\net5.0\ref\Traini.dll
+C:\Users\UTENTE\source\repos\Pyxis-CS-Repo\Traini\Traini\bin\Debug\net5.0\Traini.pdb
+C:\Users\UTENTE\source\repos\Pyxis-CS-Repo\Traini\Traini\obj\Debug\net5.0\Traini.csproj.AssemblyReference.cache
+C:\Users\UTENTE\source\repos\Pyxis-CS-Repo\Traini\Traini\obj\Debug\net5.0\Traini.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\UTENTE\source\repos\Pyxis-CS-Repo\Traini\Traini\obj\Debug\net5.0\Traini.AssemblyInfoInputs.cache
+C:\Users\UTENTE\source\repos\Pyxis-CS-Repo\Traini\Traini\obj\Debug\net5.0\Traini.AssemblyInfo.cs
+C:\Users\UTENTE\source\repos\Pyxis-CS-Repo\Traini\Traini\obj\Debug\net5.0\Traini.csproj.CoreCompileInputs.cache
+C:\Users\UTENTE\source\repos\Pyxis-CS-Repo\Traini\Traini\obj\Debug\net5.0\Traini.dll
+C:\Users\UTENTE\source\repos\Pyxis-CS-Repo\Traini\Traini\obj\Debug\net5.0\ref\Traini.dll
+C:\Users\UTENTE\source\repos\Pyxis-CS-Repo\Traini\Traini\obj\Debug\net5.0\Traini.pdb

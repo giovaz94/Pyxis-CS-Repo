@@ -29,5 +29,10 @@ namespace Traini.Model.Util
         {
             this.Width += amount;
         }
+
+        public bool Equals(IDimension dimension)
+        {
+            return this.Width == dimension.Width && this.Height == dimension.Height;
+        }
     }
 }
