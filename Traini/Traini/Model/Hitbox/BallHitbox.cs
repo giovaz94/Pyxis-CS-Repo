@@ -11,14 +11,14 @@ namespace Traini.Model.Hitbox
         /// </summary>
         private double Radius
         {
-            get { return this.Dimension.Height / 2; }
+            get => this.Dimension.Height / 2;
         }
         /// <summary>
         /// The Pace of the BallHitbox
         /// </summary>
         private IVector Pace
         {
-            get { return this.Element.Pace; }
+            get => this.Element.Pace;
         }
 
         public BallHitbox(IElement element) : base(element)
@@ -68,19 +68,17 @@ namespace Traini.Model.Hitbox
 
         protected override ICollisionInformation CollidingInformationWithOtherHb(IHitbox hitbox)
         {
-            double closestPointX;
-            double closestPointY;
             HitEdge? hitEdge = null;
             IDimension edgeOffset = new Dimension();
-            double bHbCenterX = this.Position.X;
-            double bHbCenterY = this.Position.Y;
-            double rHbCenterX = hitbox.Position.X;
-            double rHbCenterY = hitbox.Position.Y;
-            double rHbWidth = hitbox.Dimension.Width;
-            double rHbHeight = hitbox.Dimension.Height;
+            var bHbCenterX = this.Position.X;
+            var bHbCenterY = this.Position.Y;
+            var rHbCenterX = hitbox.Position.X;
+            var rHbCenterY = hitbox.Position.Y;
+            var rHbWidth = hitbox.Dimension.Width;
+            var rHbHeight = hitbox.Dimension.Height;
 
-            closestPointX = ClosestPointComponentCalculation(bHbCenterX, rHbCenterX, rHbWidth);
-            closestPointY = ClosestPointComponentCalculation(bHbCenterY, rHbCenterY, rHbHeight);
+            var closestPointX = ClosestPointComponentCalculation(bHbCenterX, rHbCenterX, rHbWidth);
+            var closestPointY = ClosestPointComponentCalculation(bHbCenterY, rHbCenterY, rHbHeight);
 
             if (closestPointX != bHbCenterX && closestPointY != bHbCenterY)
             {

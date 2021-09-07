@@ -9,12 +9,12 @@ namespace Traini.Model.Hitbox
 
         public IDimension Dimension
         {
-            get { return this.Element.Dimension; }
+            get => this.Element.Dimension;
         }
 
         public ICoord Position
         {
-            get { return this.Element.Position; }
+            get => this.Element.Position;
         }
 
         public AbstractHitbox(IElement element)
@@ -72,11 +72,11 @@ namespace Traini.Model.Hitbox
 
         public ICollisionInformation CollidingInformationWithBorder(IDimension borderDimension)
         {
-            double hbCenterX = this.Position.X;
-            double hbCenterY = this.Position.Y;
-            double hbHalvedWidth = this.Dimension.Width / 2;
-            double hbHalvedHeight = this.Dimension.Height / 2;
-            double borderWidth = borderDimension.Width;
+            var hbCenterX = this.Position.X;
+            var hbCenterY = this.Position.Y;
+            var hbHalvedWidth = this.Dimension.Width / 2;
+            var hbHalvedHeight = this.Dimension.Height / 2;
+            var borderWidth = borderDimension.Width;
             HitEdge? hitEdge = null;
             IDimension borderOffset = new Dimension();
 

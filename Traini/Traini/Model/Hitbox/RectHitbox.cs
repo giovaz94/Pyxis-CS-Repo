@@ -41,19 +41,17 @@ namespace Traini.Model.Hitbox
 
         protected override ICollisionInformation CollidingInformationWithSameHb(IHitbox hitbox)
         {
-            double closestPointX;
-            double closestPointY;
             HitEdge hitEdge;
             IDimension edgeOffset = new Dimension();
-            double bHbCenterX = this.Position.X;
-            double bHbCenterY = this.Position.Y;
-            double rHbCenterX = hitbox.Position.X;
-            double rHbCenterY = hitbox.Position.Y;
-            double rHbWidth = hitbox.Dimension.Width;
-            double rHbHeight = hitbox.Dimension.Height;
+            var bHbCenterX = this.Position.X;
+            var bHbCenterY = this.Position.Y;
+            var rHbCenterX = hitbox.Position.X;
+            var rHbCenterY = hitbox.Position.Y;
+            var rHbWidth = hitbox.Dimension.Width;
+            var rHbHeight = hitbox.Dimension.Height;
 
-            closestPointX = ClosestPointComponentCalculation(bHbCenterX, rHbCenterX, rHbWidth);
-            closestPointY = ClosestPointComponentCalculation(bHbCenterY, rHbCenterY, rHbHeight);
+            var closestPointX = ClosestPointComponentCalculation(bHbCenterX, rHbCenterX, rHbWidth);
+            var closestPointY = ClosestPointComponentCalculation(bHbCenterY, rHbCenterY, rHbHeight);
 
             if (closestPointX != bHbCenterX && closestPointY != bHbCenterY)
             {
@@ -91,7 +89,7 @@ namespace Traini.Model.Hitbox
 
         protected override ICollisionInformation CollidingInformationWithOtherHb(IHitbox hitbox)
         {
-            return !(hitbox is RectHitbox)
+            return (hitbox is not RectHitbox)
                     ? hitbox.CollidingInformationWithHb(this)
                     : null;
         }

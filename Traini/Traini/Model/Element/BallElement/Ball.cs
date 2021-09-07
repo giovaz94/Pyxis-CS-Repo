@@ -12,14 +12,14 @@ namespace Traini.Model.Element.BallElement
 
         public ICoord Position
         {
-            get { return this._position.CopyOf(); }
-            set { this._position = value; }
+            get => this._position.CopyOf();
+            set => this._position = value;
         }
 
         public IDimension Dimension
         {
-            get { return this._dimension.CopyOf(); }
-            set { this._dimension = value; }
+            get => this._dimension.CopyOf();
+            set => this._dimension = value;
         }
 
         public IHitbox Hitbox { get; }

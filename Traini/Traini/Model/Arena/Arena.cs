@@ -40,7 +40,7 @@ namespace Traini.Model.Arena
 
         public IPad Pad
         {
-            get { return this._pad; }
+            get => this._pad;
             set
             {
                 this.StartingPadPosition = value.Position;
@@ -51,25 +51,25 @@ namespace Traini.Model.Arena
 
         public IDimension Dimension
         {
-            get { return this._dimension.CopyOf(); }
-            private set { this._dimension = value; }
+            get => this._dimension.CopyOf();
+            private set => this._dimension = value;
         }
 
         public ISet<IBall> Balls
         {
-            get { return new HashSet<IBall>(this._ballSet); }
-            private set { this._ballSet = value; }
+            get => new HashSet<IBall>(this._ballSet);
+            private set => this._ballSet = value;
         }
 
         public ISet<IPowerup> Powerups
         {
-            get { return new HashSet<IPowerup>(this._powerupSet); }
-            private set { this._powerupSet = value; }
+            get => new HashSet<IPowerup>(this._powerupSet);
+            private set => this._powerupSet = value;
         }
 
         public ISet<IBrick> Bricks
         {
-            get { return new HashSet<IBrick>(this._brickDictionary.Values); }
+            get => new HashSet<IBrick>(this._brickDictionary.Values);
         }
 
         public Arena(IDimension inputDimension)
@@ -130,11 +130,12 @@ namespace Traini.Model.Arena
         /// <param name="amount">The amount for the modification</param>
         private void ModifyPadWidth(double amount)
         {
-            if (CanModifyPadWidth(amount))
+            if (!CanModifyPadWidth(amount))
             {
-                this.Pad.IncreaseWidth(amount);
-                this.AdjustPositionOnResize(amount);
+                return;
             }
+            this.Pad.IncreaseWidth(amount);
+            this.AdjustPositionOnResize(amount);
         }
 
         public void AddBall(IBall ball)
@@ -157,7 +158,9 @@ namespace Traini.Model.Arena
 
         public void CleanUp()
         {
-            throw new NotImplementedException();
+            this.ClearBalls();
+            this.ClearBricks();
+            this.ClearPowerups();
         }
 
         public void ClearBalls()
@@ -170,7 +173,7 @@ namespace Traini.Model.Arena
 
         public void ClearBricks()
         {
-            foreach (IBrick brick in this.Bricks)
+            foreach (var brick in this.Bricks)
             {
                 this.RemoveBrick(brick.Position);
             }
@@ -178,7 +181,7 @@ namespace Traini.Model.Arena
 
         public void ClearPowerups()
         {
-            foreach (IPowerup powerup in this.Powerups)
+            foreach (var powerup in this.Powerups)
             {
                 this.RemovePowerup(powerup);
             }
