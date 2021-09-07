@@ -12,18 +12,22 @@ namespace Traini.Model.Element
     {
         public int Id { get; set; }
         public BallType Type { get; }
+
         public ICoord Position
         {
             get { return this.Position.CopyOf(); }
             set { this.Position = value; }
         }
+
         public IDimension Dimension
         {
             get { return this.Dimension.CopyOf(); }
             set { this.Dimension = value; }
         }
+
         public IHitbox Hitbox { get; }
         public IVector Pace { get; set; }
+
         public Ball(int id, BallType type, ICoord position, IVector pace)
         {
             this.Id = id;

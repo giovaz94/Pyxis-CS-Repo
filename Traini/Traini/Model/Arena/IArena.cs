@@ -15,23 +15,41 @@ namespace Traini.Model.Arena
         ISet<IBall> Balls { get; }
         ISet<IBrick> Bricks { get; }
         ISet<IPowerup> Powerups { get; }
+
         void AddBall(IBall ball);
+
         void AddBrick(IBrick brick);
+
         void AddPowerup(IPowerup powerup);
+
         void CleanUp();
+
         void ClearBalls();
+
         void ClearBricks();
+
         void ClearPowerups();
+
         int GetLastBallId();
+
         IBall GetRandomBall();
+
         void IncreasePadWidth(double amount);
+
         bool IsCleared();
+
         void MovePadLeft();
+
         void MovePadRight();
+
         void RemoveBall(IBall ball);
+
         void RemoveBrick(ICoord brickCoord);
+
         void RemovePowerup(IPowerup powerup);
+
         void ResetStartingPosition();
+
         void RestorePadDimension();
     }
 }

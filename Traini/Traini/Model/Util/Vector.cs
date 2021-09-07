@@ -10,9 +10,11 @@ namespace Traini.Model.Util
     {
         public double X { get; set; }
         public double Y { get; set; }
+
         public Vector() : this(0, 0)
         {
         }
+
         public Vector(double x, double y)
         {
             this.X = x;

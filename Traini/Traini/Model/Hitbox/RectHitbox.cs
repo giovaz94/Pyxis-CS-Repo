@@ -13,23 +13,27 @@ namespace Traini.Model.Hitbox
         public RectHitbox(IElement element) : base(element)
         {
         }
+
         private double ClosestPointComponentCalculation(double sHBCenterValue, double fHBCenterValue, double rHBEdgeLength)
         {
             return sHBCenterValue < fHBCenterValue - rHBEdgeLength / 2
                     ? fHBCenterValue - rHBEdgeLength / 2
                     : Math.Min(sHBCenterValue, fHBCenterValue + rHBEdgeLength / 2);
         }
+
         public override ICollisionInformation CollidingInformationWithHB(IHitbox hitbox)
         {
             return hitbox is RectHitbox
                     ? this.CollidingInformationWithSameHB(hitbox)
                     : this.CollidingInformationWithOtherHB(hitbox);
         }
+
         public override bool IsCollidingWithPoint(double px, double py)
         {
             return Math.Abs(px - this.Position.X) <= this.Dimension.Width / 2
                     && Math.Abs(py - this.Position.Y) <= this.Dimension.Height / 2;
         }
+
         protected override ICollisionInformation CollidingInformationWithSameHB(IHitbox hitbox)
         {
             double closestPointX;
@@ -79,6 +83,7 @@ namespace Traini.Model.Hitbox
                     ? new CollisionInformation(hitEdge, edgeOffset)
                     : null;
         }
+
         protected override ICollisionInformation CollidingInformationWithOtherHB(IHitbox hitbox)
         {
             return !(hitbox is RectHitbox)

@@ -13,11 +13,17 @@ namespace Traini.Model.Hitbox
         IDimension Dimension { get; }
         IElement Element { get; }
         ICoord Position { get; }
+
         bool IsCollidingWithHB(IHitbox hitbox);
+
         bool IsCollidingWithLowerBorder(IDimension borderDimension);
+
         bool IsCollidingWithPoint(ICoord position);
+
         bool IsCollidingWithPoint(double px, double py);
+
         ICollisionInformation CollidingInformationWithBorder(IDimension borderDimension);
+
         ICollisionInformation CollidingInformationWithHB(IHitbox hitbox);
     }
 }

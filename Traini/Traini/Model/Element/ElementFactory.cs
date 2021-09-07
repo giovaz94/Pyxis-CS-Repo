@@ -10,6 +10,7 @@ namespace Traini.Model.Element
     class ElementFactory : IElementFactory
     {
         private static int FLAT_ANGLE = 180;
+
         public IBall createBallWithRandomAngle(int id, BallType type, ICoord position, double module)
         {
             var randomAngleInRad = new Random().Next(FLAT_ANGLE) * Math.PI / FLAT_ANGLE;

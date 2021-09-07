@@ -14,23 +14,28 @@ namespace Traini.Model.Hitbox
         {
             get { return this.Dimension.Height / 2; }
         }
+
         private IVector Pace
         {
             get { return this.Element.Pace; }
         }
+
         public BallHitbox(IElement element) : base(element)
         {
         }
+
         private double ClosestPointComponentCalculation(double bHBCenterValue, double rHBCenterValue, double rHBEdgeLength)
         {
             return bHBCenterValue < rHBCenterValue - rHBEdgeLength / 2
                     ? rHBCenterValue - rHBEdgeLength / 2
                     : Math.Min(bHBCenterValue, rHBCenterValue + rHBEdgeLength / 2);
         }
+
         private double CornerOffsetCalculation(double distanceFromClosestPoint, double distanceComponent)
         {
             return (this.Radius - distanceFromClosestPoint) * distanceComponent / this.Radius;
         }
+
         public override ICollisionInformation CollidingInformationWithHB(IHitbox hitbox)
         {
             return hitbox is BallHitbox
