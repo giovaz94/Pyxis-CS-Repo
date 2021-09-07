@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Traini.Model.Element.Pad
+namespace Traini.Model.Element.PadElement
 {
     interface IPad : IElement
     {

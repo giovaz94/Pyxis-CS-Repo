@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Traini.Model.Element.Ball
+namespace Traini.Model.Element.BallElement
 {
     interface IBall : IElement
     {

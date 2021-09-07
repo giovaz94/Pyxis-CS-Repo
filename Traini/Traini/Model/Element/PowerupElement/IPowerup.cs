@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Traini.Model.Element.Powerup
+namespace Traini.Model.Element.PowerupElement
 {
     interface IPowerup : IElement
     {

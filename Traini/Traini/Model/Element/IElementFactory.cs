@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Traini.Model.Util;
+using Traini.Model.Element.BallElement;
 
 namespace Traini.Model.Element
 {
@@ -17,6 +18,6 @@ namespace Traini.Model.Element
         /// <param name="position">The position of the Ball</param>
         /// <param name="module">The module of the pace of the Ball</param>
         /// <returns>A Ball with a random angled pace</returns>
-        IBall createBallWithRandomAngle(int id, BallType type, ICoord position, double module);
+        IBall CreateBallWithRandomAngle(int id, BallType type, ICoord position, double module);
     }
 }

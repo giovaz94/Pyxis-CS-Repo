@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Traini.Model.Hitbox;
 using Traini.Model.Util;
 
-namespace Traini.Model.Element.Ball
+namespace Traini.Model.Element.BallElement
 {
     class Ball : IBall
     {

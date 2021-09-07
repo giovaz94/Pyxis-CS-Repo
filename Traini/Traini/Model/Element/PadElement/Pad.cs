@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Traini.Model.Hitbox;
 using Traini.Model.Util;
 
-namespace Traini.Model.Element.Pad
+namespace Traini.Model.Element.PadElement
 {
     class Pad : IPad
     {
