@@ -3,7 +3,7 @@ using Traini.Model.Util;
 
 namespace Traini.Model.Element.BallElement
 {
-    class Ball : IBall
+    public class Ball : IBall
     {
         private ICoord _position;
         private IDimension _dimension;

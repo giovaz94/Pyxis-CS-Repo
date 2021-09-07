@@ -1,7 +1,7 @@
 ﻿
 namespace Traini.Model.Util
 {
-    interface ICoord
+    public interface ICoord
     {
         /// <summary>
         /// The X value of the Coord

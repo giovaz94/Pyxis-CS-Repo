@@ -3,7 +3,7 @@ using Traini.Model.Util;
 
 namespace Traini.Model.Hitbox
 {
-    abstract class AbstractHitbox : IHitbox
+    public abstract class AbstractHitbox : IHitbox
     {
         public IElement Element { get; }
 

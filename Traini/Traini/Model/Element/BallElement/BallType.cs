@@ -1,7 +1,7 @@
 ﻿
 namespace Traini.Model.Element.BallElement
 {
-    enum BallType
+    public enum BallType
     {
         /// <summary>
         /// Normal ball type

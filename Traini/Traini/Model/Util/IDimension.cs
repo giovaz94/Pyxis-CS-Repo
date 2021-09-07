@@ -1,7 +1,7 @@
 ﻿
 namespace Traini.Model.Util
 {
-    interface IDimension
+    public interface IDimension
     {
         double Width { get; set; }
         double Height { get; set; }

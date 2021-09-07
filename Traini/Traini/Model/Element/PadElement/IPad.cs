@@ -1,7 +1,7 @@
 ﻿
 namespace Traini.Model.Element.PadElement
 {
-    interface IPad : IElement
+    public interface IPad : IElement
     {
         /// <summary>
         /// Increases the Width of the Pad

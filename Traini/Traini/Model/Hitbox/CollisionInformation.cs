@@ -2,7 +2,7 @@
 
 namespace Traini.Model.Hitbox
 {
-    class CollisionInformation : ICollisionInformation
+    public class CollisionInformation : ICollisionInformation
     {
         public HitEdge HitEdge { get; set; }
         public IDimension CollisionOffset { get; }

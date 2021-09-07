@@ -3,7 +3,7 @@ using Traini.Model.Util;
 
 namespace Traini.Model.Element
 {
-    interface IElementFactory
+    public interface IElementFactory
     {
         /// <summary>
         /// Creates a Ball with a random angled pace

@@ -7,7 +7,7 @@ using Traini.Model.Util;
 
 namespace Traini.Model.Arena
 {
-    interface IArena
+    public interface IArena
     {
         /// <summary>
         /// The Dimension of the Arena

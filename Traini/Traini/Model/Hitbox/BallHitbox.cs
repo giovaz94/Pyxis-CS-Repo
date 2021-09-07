@@ -4,7 +4,7 @@ using Traini.Model.Util;
 
 namespace Traini.Model.Hitbox
 {
-    class BallHitbox : AbstractHitbox
+    public class BallHitbox : AbstractHitbox
     {
         /// <summary>
         /// The Radius of the BallHitbox

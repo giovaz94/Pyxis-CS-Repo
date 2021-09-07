@@ -4,7 +4,7 @@ using Traini.Model.Util;
 
 namespace Traini.Model.Hitbox
 {
-    class RectHitbox : AbstractHitbox
+    public class RectHitbox : AbstractHitbox
     {
         public RectHitbox(IElement element) : base(element)
         {

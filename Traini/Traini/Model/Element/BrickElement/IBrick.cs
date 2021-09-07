@@ -1,7 +1,7 @@
 ﻿
 namespace Traini.Model.Element.BrickElement
 {
-    interface IBrick : IElement
+    public interface IBrick : IElement
     {
         /// <summary>
         /// Checks if the Brick is indestructible

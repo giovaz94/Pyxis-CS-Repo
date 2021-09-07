@@ -3,7 +3,7 @@ using Traini.Model.Util;
 
 namespace Traini.Model.Element
 {
-    interface IElement
+    public interface IElement
     {
         /// <summary>
         /// The position of the Element

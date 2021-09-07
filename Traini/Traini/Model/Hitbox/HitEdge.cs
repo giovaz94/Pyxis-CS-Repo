@@ -1,7 +1,7 @@
 ﻿
 namespace Traini.Model.Hitbox
 {
-    enum HitEdge
+    public enum HitEdge
     {
         /// <summary>
         /// Collision between two BallHitboxes

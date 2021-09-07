@@ -2,7 +2,7 @@
 
 namespace Traini.Model.Hitbox
 {
-    interface ICollisionInformation
+    public interface ICollisionInformation
     {
         /// <summary>
         /// The HitEdge of the collision

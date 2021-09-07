@@ -2,7 +2,7 @@
 
 namespace Traini.Model.Util
 {
-    class Coord : ICoord
+    public class Coord : ICoord
     {
         public double X { get; set; }
         public double Y { get; set; }

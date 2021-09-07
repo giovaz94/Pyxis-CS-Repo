@@ -1,7 +1,7 @@
 ﻿
 namespace Traini.Model.Util
 {
-    interface IVector
+    public interface IVector
     {
         /// <summary>
         /// The X value of the vector

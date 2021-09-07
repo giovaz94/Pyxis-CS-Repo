@@ -1,7 +1,7 @@
 ﻿
 namespace Traini.Model.Element.BallElement
 {
-    interface IBall : IElement
+    public interface IBall : IElement
     {
         /// <summary>
         /// The id of the Ball

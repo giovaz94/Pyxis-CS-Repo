@@ -1,7 +1,7 @@
 ﻿
 namespace Traini.Model.Util
 {
-    class Dimension : IDimension
+    public class Dimension : IDimension
     {
         public double Width { get; set; }
         public double Height { get; set; }

@@ -3,7 +3,7 @@ using Traini.Model.Util;
 
 namespace Traini.Model.Element.PadElement
 {
-    class Pad : IPad
+    public class Pad : IPad
     {
         private ICoord _position;
         private IDimension _dimension;

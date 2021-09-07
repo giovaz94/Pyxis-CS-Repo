@@ -4,7 +4,7 @@ using Traini.Model.Util;
 
 namespace Traini.Model.Element
 {
-    class ElementFactory : IElementFactory
+    public class ElementFactory : IElementFactory
     {
         private static int FLAT_ANGLE = 180;
         private static IDimension RANDOM_BALL_DIMENSION = new Dimension(10, 10);

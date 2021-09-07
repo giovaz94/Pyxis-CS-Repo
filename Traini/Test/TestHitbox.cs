@@ -1,4 +1,6 @@
 using NUnit.Framework;
+using NUnit.Framework.Constraints;
+using Traini.Model.Util;
 
 namespace Test
 {
@@ -10,8 +12,9 @@ namespace Test
         }
 
         [Test]
-        public void Test1()
+        public void TestCollidingWithPoint()
         {
+            var coord = new Coord(10, 10);
             Assert.Pass();
         }
     }

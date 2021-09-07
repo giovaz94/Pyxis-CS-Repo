@@ -3,7 +3,7 @@ using Traini.Model.Util;
 
 namespace Traini.Model.Hitbox
 {
-    interface IHitbox
+    public interface IHitbox
     {
         /// <summary>
         /// The dimension of the hitbox

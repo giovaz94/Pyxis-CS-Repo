@@ -1,7 +1,7 @@
 ﻿
 namespace Traini.Model.Util
 {
-    class Vector : IVector
+    public class Vector : IVector
     {
         public double X { get; set; }
         public double Y { get; set; }

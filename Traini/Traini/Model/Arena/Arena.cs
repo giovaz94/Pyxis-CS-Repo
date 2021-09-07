@@ -10,7 +10,7 @@ using Traini.Model.Util;
 
 namespace Traini.Model.Arena
 {
-    class Arena : IArena
+    public class Arena : IArena
     {
         private static double PAD_X_MOVEMENT = 10;
         private static double MAX_PAD_X_DIMENSION = 200;

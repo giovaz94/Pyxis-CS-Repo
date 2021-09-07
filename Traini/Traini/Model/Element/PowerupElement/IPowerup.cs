@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Traini.Model.Element.PowerupElement
 {
-    interface IPowerup : IElement
+    public interface IPowerup : IElement
     {
     }
 }
