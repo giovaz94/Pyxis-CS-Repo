@@ -10,11 +10,16 @@ namespace Traini.Model.Hitbox
 {
     class BallHitbox : AbstractHitbox
     {
+        /// <summary>
+        /// The Radius of the BallHitbox
+        /// </summary>
         private double Radius
         {
             get { return this.Dimension.Height / 2; }
         }
-
+        /// <summary>
+        /// The Pace of the BallHitbox
+        /// </summary>
         private IVector Pace
         {
             get { return this.Element.Pace; }
@@ -24,6 +29,15 @@ namespace Traini.Model.Hitbox
         {
         }
 
+        /// <summary>
+        /// Calculation of the value of the closest point of the
+        /// RectHitbox from the center of the BallHitbox
+        /// </summary>
+        /// <param name="bHBCenterValue"> The value of the center of the BallHitbox</param>
+        /// <param name="rHBCenterValue"> The value of the center of the RectHitbox</param>
+        /// <param name="rHBEdgeLength"> The length of the edge of the RectHitbox</param>
+        /// <returns>bHBCenterValue if the center of the BallHitbox is inside the RectHitbox,
+        /// the Coord value of the closest edge of the RectHitbox otherwise</returns>
         private double ClosestPointComponentCalculation(double bHBCenterValue, double rHBCenterValue, double rHBEdgeLength)
         {
             return bHBCenterValue < rHBCenterValue - rHBEdgeLength / 2
@@ -31,6 +45,14 @@ namespace Traini.Model.Hitbox
                     : Math.Min(bHBCenterValue, rHBCenterValue + rHBEdgeLength / 2);
         }
 
+        /// <summary>
+        /// Calculates the offset to apply to the hitbox after the collision
+        /// </summary>
+        /// <param name="distanceFromClosestPoint"> The distance from the closest point of the RectHitbox
+        /// to the center of the BallHitbox</param>
+        /// <param name="distanceComponent"> The component of the distance from the closest point
+        /// of the RectHitbox to the center of the BallHitbox</param>
+        /// <returns>The offset to apply to the hitbox after the collision</returns>
         private double CornerOffsetCalculation(double distanceFromClosestPoint, double distanceComponent)
         {
             return (this.Radius - distanceFromClosestPoint) * distanceComponent / this.Radius;

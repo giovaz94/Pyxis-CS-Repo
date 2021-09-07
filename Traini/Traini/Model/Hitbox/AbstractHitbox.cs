@@ -27,23 +27,52 @@ namespace Traini.Model.Hitbox
             this.Element = element;
         }
 
+        /// <summary>
+        /// Checks if the distance form the border is small enough
+        /// to have a collision
+        /// </summary>
+        /// <param name="distanceFromBorder"> The passed border distance from the border</param>
+        /// <param name="collisionDistance"> The passed distance from the colliding point</param>
+        /// <returns>A true if there's a collision, false otherwise</returns>
         private bool CheckBorderCollision(double distanceFromBorder, double collisionDistance)
         {
             return distanceFromBorder <= collisionDistance;
         }
 
+        /// <summary>
+        /// Calculates the offset to apply to the hitbox after the collision
+        /// </summary>
+        /// <param name="distanceFromCenter"> The passed distance from the center of the hitbox</param>
+        /// <returns>The offset to apply to the hitbox after the collision</returns>
         protected double WidthOffsetCalculation(double distanceFromCenter)
         {
             return this.Dimension.Width / 2 - distanceFromCenter;
         }
 
+        /// <summary>
+        /// Calculates the offset to apply to the hitbox after the collision
+        /// </summary>
+        /// <param name="distanceFromCenter"> The passed distance from the center of the hitbox</param>
+        /// <returns>The offset to apply to the hitbox after the collision</returns>
         protected double HeightOffsetCalculation(double distanceFromCenter)
         {
             return this.Dimension.Height / 2 - distanceFromCenter;
         }
 
+        /// <summary>
+        /// Checks for a collision with the different hitbox
+        /// </summary>
+        /// <param name="hitbox"> The passed hitbox</param>
+        /// <returns>A CollisionInformation with the relative information
+        /// if there's a collision, null otherwise</returns>
         protected abstract ICollisionInformation CollidingInformationWithOtherHB(IHitbox hitbox);
 
+        /// <summary>
+        /// Checks for a collision with the same hitbox
+        /// </summary>
+        /// <param name="hitbox"> The passed hitbox</param>
+        /// <returns>A CollisionInformation with the relative information
+        /// if there's a collision, null otherwise</returns>
         protected abstract ICollisionInformation CollidingInformationWithSameHB(IHitbox hitbox);
 
         public ICollisionInformation CollidingInformationWithBorder(IDimension borderDimension)
@@ -90,9 +119,9 @@ namespace Traini.Model.Hitbox
             return this.CollidingInformationWithHB(hitbox) != null;
         }
 
-        public bool IsCollidingWithPoint(ICoord position)
+        public bool IsCollidingWithPoint(ICoord point)
         {
-            return IsCollidingWithPoint(position.X, position.Y);
+            return IsCollidingWithPoint(point.X, point.Y);
         }
 
         public abstract bool IsCollidingWithPoint(double px, double py);

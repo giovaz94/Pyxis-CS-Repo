@@ -14,6 +14,15 @@ namespace Traini.Model.Hitbox
         {
         }
 
+        /// <summary>
+        /// Calculation of the value of the closest point of the
+        /// RectHitbox from the center of the BallHitbox
+        /// </summary>
+        /// <param name="fHBCenterValue"> The value of the center of the first RectHitbox</param>
+        /// <param name="sHBCenterValue"> The value of the center of the second RectHitbox</param>
+        /// <param name="rHBEdgeLength"> The length of the edge of the RectHitbox</param>
+        /// <returns>bHBCenterValue if the center of the BallHitbox is inside the RectHitbox,
+        /// the Coord value of the closest edge of the RectHitbox otherwise</returns>
         private double ClosestPointComponentCalculation(double sHBCenterValue, double fHBCenterValue, double rHBEdgeLength)
         {
             return sHBCenterValue < fHBCenterValue - rHBEdgeLength / 2
