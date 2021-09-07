@@ -6,12 +6,12 @@ namespace Antonioni.GameState
     public class GameState: IGameState
     {
         
-        private ILevel Level {get; set;}
-        private StateEnum State { get; set; }
+        private ILevel _level {get; set;}
+        private StateEnum _state { get; set; }
         
         public GameState(ILevel level)
         {
-            this.Level = level;
+            this._level = level;
             this.SetState(StateEnum.WaitingForNewGame);
         }
 
@@ -21,27 +21,27 @@ namespace Antonioni.GameState
         
         public ILevel GetLevel()
         {
-            return this.Level;
+            return this._level;
         }
 
         public StateEnum GetState()
         {
-            return this.State;
+            return this._state;
         }
 
         public void SetState(StateEnum stateEnum)
         {
-            this.State = stateEnum;
+            this._state = stateEnum;
         }
 
         public void Reset()
         {
-            this.Level = new Level.Level(new Arena.Arena());
+            this._level = new Level.Level(new Arena.Arena());
         }
 
         public void Update(double delta)
         {
-            this.Level.Update(delta);
+            this._level.Update(delta);
         }
     }
 }
