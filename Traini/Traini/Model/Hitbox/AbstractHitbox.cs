@@ -50,19 +50,19 @@ namespace Traini.Model.Hitbox
             if (CheckBorderCollision(HBCenterX, HBHalvedWidth))
             {
                 borderOffset.Width = WidthOffsetCalculation(HBCenterX);
-                hitEdge = HitEdge.VERTICAL;
+                hitEdge = HitEdge.Vertical;
             }
             else if (CheckBorderCollision(borderWidth - HBCenterX, HBHalvedWidth))
             {
                 borderOffset.Width = WidthOffsetCalculation(borderWidth - HBCenterX);
-                hitEdge = HitEdge.VERTICAL;
+                hitEdge = HitEdge.Vertical;
             }
             if (CheckBorderCollision(HBCenterY, HBHalvedHeight))
             {
                 borderOffset.Height = HeightOffsetCalculation(HBCenterY);
                 hitEdge = !hitEdge.HasValue
-                            ? HitEdge.HORIZONTAL
-                            : HitEdge.CORNER;
+                            ? HitEdge.Horizontal
+                            : HitEdge.Corner;
             }
             return hitEdge.HasValue
                     ? new CollisionInformation(hitEdge.Value, borderOffset)

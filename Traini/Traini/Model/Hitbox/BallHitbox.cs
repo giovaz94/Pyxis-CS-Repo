@@ -66,38 +66,38 @@ namespace Traini.Model.Hitbox
                 edgeOffset.Height = CornerOffsetCalculation(distanceFromClosestPoint, Math.Abs(bHBCenterY - closestPointY));
                 if ((bHBCenterX <= rHBCenterX && this.Pace.X > 0) || (bHBCenterX > rHBCenterX && this.Pace.X < 0))
                 {
-                    hitEdge = HitEdge.VERTICAL;
+                    hitEdge = HitEdge.Vertical;
                 }
                 if ((bHBCenterY <= rHBCenterY && this.Pace.Y > 0) || (bHBCenterY > rHBCenterY && this.Pace.Y < 0))
                 {
                     hitEdge = !hitEdge.HasValue
-                            ? HitEdge.HORIZONTAL
-                            : HitEdge.CORNER;
+                            ? HitEdge.Horizontal
+                            : HitEdge.Corner;
                 }
             }
             else if (closestPointX != bHBCenterX && closestPointY == bHBCenterY)
             {
                 edgeOffset.Width = WidthOffsetCalculation(Math.Abs(bHBCenterX - closestPointX));
-                hitEdge = HitEdge.VERTICAL;
+                hitEdge = HitEdge.Vertical;
             }
             else if (closestPointX == bHBCenterX && closestPointY != bHBCenterY)
             {
                 edgeOffset.Height = HeightOffsetCalculation(Math.Abs(bHBCenterY - closestPointY));
                 hitEdge = bHBCenterY > rHBCenterY
-                        ? HitEdge.HORIZONTAL
-                        : HitEdge.TOP;
+                        ? HitEdge.Horizontal
+                        : HitEdge.Top;
             }
             else
             {
                 if (Math.Min(bHBCenterX, rHBWidth - bHBCenterX) <= Math.Min(bHBCenterY, rHBHeight - bHBCenterY))
                 {
                     edgeOffset.Width = WidthOffsetCalculation(Math.Min(bHBCenterX, rHBWidth - bHBCenterX));
-                    hitEdge = HitEdge.VERTICAL;
+                    hitEdge = HitEdge.Vertical;
                 }
                 else
                 {
                     edgeOffset.Height = HeightOffsetCalculation(Math.Min(bHBCenterY, rHBHeight - bHBCenterY));
-                    hitEdge = HitEdge.HORIZONTAL;
+                    hitEdge = HitEdge.Horizontal;
                 }
             }
             return this.IsCollidingWithPoint(closestPointX, closestPointY)
@@ -108,7 +108,7 @@ namespace Traini.Model.Hitbox
         protected override ICollisionInformation CollidingInformationWithSameHB(IHitbox hitbox)
         {
             return this.Position.Distance(hitbox.Position) <= this.Radius + ((BallHitbox)hitbox).Radius
-                    ? new CollisionInformation(HitEdge.CIRCLE, new Dimension())
+                    ? new CollisionInformation(HitEdge.Circle, new Dimension())
                     : null;
         }
     }

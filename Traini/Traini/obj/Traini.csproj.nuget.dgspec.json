@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Traini\\Traini.csproj": {}
+    "C:\\Users\\UTENTE\\Source\\Repos\\Pyxis-CS-Repo\\Traini\\Traini\\Traini.csproj": {}
   },
   "projects": {
-    "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Traini\\Traini.csproj": {
+    "C:\\Users\\UTENTE\\Source\\Repos\\Pyxis-CS-Repo\\Traini\\Traini\\Traini.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Traini\\Traini.csproj",
+        "projectUniqueName": "C:\\Users\\UTENTE\\Source\\Repos\\Pyxis-CS-Repo\\Traini\\Traini\\Traini.csproj",
         "projectName": "Traini",
-        "projectPath": "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Traini\\Traini.csproj",
+        "projectPath": "C:\\Users\\UTENTE\\Source\\Repos\\Pyxis-CS-Repo\\Traini\\Traini\\Traini.csproj",
         "packagesPath": "C:\\Users\\UTENTE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Traini\\obj\\",
+        "outputPath": "C:\\Users\\UTENTE\\Source\\Repos\\Pyxis-CS-Repo\\Traini\\Traini\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\UTENTE\\AppData\\Roaming\\NuGet\\NuGet.Config",

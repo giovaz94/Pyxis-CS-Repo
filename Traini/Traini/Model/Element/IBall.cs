@@ -8,5 +8,7 @@ namespace Traini.Model.Element
 {
     interface IBall : IElement
     {
+        int Id { get; set; }
+        BallType Type { get; }
     }
 }

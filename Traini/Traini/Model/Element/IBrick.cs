@@ -8,5 +8,6 @@ namespace Traini.Model.Element
 {
     interface IBrick : IElement
     {
+        bool IsIndestructible();
     }
 }

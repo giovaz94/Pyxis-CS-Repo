@@ -50,29 +50,29 @@ namespace Traini.Model.Hitbox
             {
                 edgeOffset.Width = WidthOffsetCalculation(Math.Abs(bHBCenterX - closestPointX));
                 edgeOffset.Height = HeightOffsetCalculation(Math.Abs(bHBCenterY - closestPointY));
-                hitEdge = HitEdge.CORNER;
+                hitEdge = HitEdge.Corner;
             }
             else if (closestPointX != bHBCenterX && closestPointY == bHBCenterY)
             {
                 edgeOffset.Width = WidthOffsetCalculation(Math.Abs(bHBCenterX - closestPointX));
-                hitEdge = HitEdge.VERTICAL;
+                hitEdge = HitEdge.Vertical;
             }
             else if (closestPointX == bHBCenterX && closestPointY != bHBCenterY)
             {
                 edgeOffset.Height = HeightOffsetCalculation(Math.Abs(bHBCenterY - closestPointY));
-                hitEdge = HitEdge.HORIZONTAL;
+                hitEdge = HitEdge.Horizontal;
             }
             else
             {
                 if (Math.Min(bHBCenterX, rHBWidth - bHBCenterX) <= Math.Min(bHBCenterY, rHBHeight - bHBCenterY))
                 {
                     edgeOffset.Width = WidthOffsetCalculation(Math.Min(bHBCenterX, rHBWidth - bHBCenterX));
-                    hitEdge = HitEdge.VERTICAL;
+                    hitEdge = HitEdge.Vertical;
                 }
                 else
                 {
                     edgeOffset.Height = HeightOffsetCalculation(Math.Min(bHBCenterY, rHBHeight - bHBCenterY));
-                    hitEdge = HitEdge.HORIZONTAL;
+                    hitEdge = HitEdge.Horizontal;
                 }
             }
             return IsCollidingWithPoint(closestPointX, closestPointY)

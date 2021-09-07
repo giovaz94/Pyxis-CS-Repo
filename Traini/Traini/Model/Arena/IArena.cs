@@ -33,6 +33,5 @@ namespace Traini.Model.Arena
         void RemovePowerup(IPowerup powerup);
         void ResetStartingPosition();
         void RestorePadDimension();
-        void Update(double delta);
     }
 }

@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Traini.Model.Element
 {
-    interface IPad : IElement
+    enum BallType
     {
-        void IncreaseWidth(double amount);
+        NormalBall,
+        AtomicBall,
+        SteelBall
     }
 }

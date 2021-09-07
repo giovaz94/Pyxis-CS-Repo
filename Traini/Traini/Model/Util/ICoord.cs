@@ -12,5 +12,7 @@ namespace Traini.Model.Util
         double Y { get; set; }
         double Distance(ICoord coord);
         double Distance(double px, double py);
+        void SumXValue(double dx);
+        ICoord CopyOf();
     }
 }

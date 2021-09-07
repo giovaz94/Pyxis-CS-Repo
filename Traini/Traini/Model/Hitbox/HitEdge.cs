@@ -8,10 +8,10 @@ namespace Traini.Model.Hitbox
 {
     enum HitEdge
     {
-        CIRCLE,
-        CORNER,
-        HORIZONTAL,
-        TOP,
-        VERTICAL
+        Circle,
+        Corner,
+        Horizontal,
+        Top,
+        Vertical
     }
 }

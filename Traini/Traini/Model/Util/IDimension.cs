@@ -10,5 +10,7 @@ namespace Traini.Model.Util
     {
         double Width { get; set; }
         double Height { get; set; }
+        IDimension CopyOf();
+        void IncreaseWidth(double amount);
     }
 }

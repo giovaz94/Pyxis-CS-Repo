@@ -13,10 +13,21 @@ namespace Traini.Model.Util
         public Dimension() : this(0, 0)
         {
         }
+        public Dimension(IDimension dimension) : this(dimension.Width, dimension.Height)
+        {
+        }
         public Dimension(double width, double height)
         {
             this.Width = width;
             this.Height = height;
+        }
+        public IDimension CopyOf()
+        {
+            return new Dimension(this);
+        }
+        public void IncreaseWidth(double amount)
+        {
+            this.Width += amount;
         }
     }
 }
