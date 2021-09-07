@@ -6,23 +6,25 @@ using System.Threading.Tasks;
 using Traini.Model.Hitbox;
 using Traini.Model.Util;
 
-namespace Traini.Model.Element
+namespace Traini.Model.Element.Ball
 {
     class Ball : IBall
     {
+        private ICoord _position;
+        private IDimension _dimension;
         public int Id { get; set; }
         public BallType Type { get; }
 
         public ICoord Position
         {
-            get { return this.Position.CopyOf(); }
-            set { this.Position = value; }
+            get { return this._position.CopyOf(); }
+            set { this._position = value; }
         }
 
         public IDimension Dimension
         {
-            get { return this.Dimension.CopyOf(); }
-            set { this.Dimension = value; }
+            get { return this._dimension.CopyOf(); }
+            set { this._dimension = value; }
         }
 
         public IHitbox Hitbox { get; }

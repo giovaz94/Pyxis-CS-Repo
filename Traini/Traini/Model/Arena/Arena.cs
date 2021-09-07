@@ -13,6 +13,7 @@ namespace Traini.Model.Arena
         private static double PAD_X_MOVEMENT = 10;
         private static double MAX_PAD_X_DIMENSION = 200;
         private static double MIN_PAD_X_DIMENSION = 10;
+        private IDimension _dimension;
         private IDictionary<ICoord, IBrick> _brickDictionary;
         private ISet<IBall> _ballSet;
         private ISet<IPowerup> _powerupSet;
@@ -48,8 +49,8 @@ namespace Traini.Model.Arena
 
         public IDimension Dimension
         {
-            get { return this.Dimension.CopyOf(); }
-            private set { this.Dimension = value; }
+            get { return this._dimension.CopyOf(); }
+            private set { this._dimension = value; }
         }
 
         public ISet<IBall> Balls

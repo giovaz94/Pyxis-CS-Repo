@@ -10,16 +10,18 @@ namespace Traini.Model.Element.Pad
 {
     class Pad : IPad
     {
+        private ICoord _position;
+        private IDimension _dimension;
         public ICoord Position
         {
-            get { return this.Position.CopyOf(); }
-            set { this.Position = value; }
+            get { return this._position.CopyOf(); }
+            set { this._position = value; }
         }
 
         public IDimension Dimension
         {
-            get { return this.Dimension.CopyOf(); }
-            set { this.Dimension = value; }
+            get { return this._dimension.CopyOf(); }
+            set { this._dimension = value; }
         }
 
         public IHitbox Hitbox { get; }

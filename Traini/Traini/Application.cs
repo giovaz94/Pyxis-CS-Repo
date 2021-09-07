@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Traini.Model.Element.Powerup
+namespace Traini
 {
-    interface IPowerup : IElement
+    class Application
     {
+        static void Main(string[] args)
+        {
+        }
     }
 }
