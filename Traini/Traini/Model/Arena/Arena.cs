@@ -18,9 +18,21 @@ namespace Traini.Model.Arena
         private ISet<IPowerup> _powerupSet;
         private IPad _pad;
 
+        /// <summary>
+        /// The starting position of the Ball
+        /// </summary>
         private ICoord StartingBallPosition { get; set; }
+        /// <summary>
+        /// The starting module of the pace of the Ball
+        /// </summary>
         private double StartingBallModule { get; set; }
+        /// <summary>
+        /// The starting position of the Pad
+        /// </summary>
         private ICoord StartingPadPosition { get; set; }
+        /// <summary>
+        /// The starting dimension of the Pad
+        /// </summary>
         private IDimension StartingPadDimension { get; set; }
 
         public IPad Pad
@@ -65,6 +77,11 @@ namespace Traini.Model.Arena
             this.Dimension = inputDimension;
         }
 
+        /// <summary>
+        /// Calculates the new Pad's Coord
+        /// </summary>
+        /// <param name="dx">The value to add to the x value of the Pad's Coord</param>
+        /// <returns>The new Coord of the Pad</returns>
         private ICoord CalculatePadNewXCoord(double dx)
         {
             var updatedCoord = this.Pad.Position;
@@ -72,12 +89,21 @@ namespace Traini.Model.Arena
             return updatedCoord;
         }
 
+        /// <summary>
+        /// Checks if the dimension of the Pad can be modified
+        /// </summary>
+        /// <param name="amount">Increase or Decrease amount to apply to the Pad</param>
+        /// <returns>true if I can proceed to modify the Pad dimension, false otherwise</returns>
         private bool CanModifyPadWidth(double amount)
         {
             var padWidth = this.Pad.Dimension.Width + amount;
             return padWidth < MAX_PAD_X_DIMENSION && padWidth > MIN_PAD_X_DIMENSION;
         }
 
+        /// <summary>
+        /// Checks the width dimension of the Pad after a resize and adjust
+        /// </summary>
+        /// <param name="resizeAmount">The resize amount</param>
         private void AdjustPositionOnResize(double resizeAmount)
         {
             var padWidth = this.Pad.Dimension.Width;
@@ -95,6 +121,10 @@ namespace Traini.Model.Arena
             this.Pad.Position = new Coord(padPosition.X + offset, padPosition.Y);
         }
 
+        /// <summary>
+        /// Modifies the Pad's width dimension of a certain amount
+        /// </summary>
+        /// <param name="amount">The amount for the modification</param>
         private void ModifyPadWidth(double amount)
         {
             if (CanModifyPadWidth(amount))

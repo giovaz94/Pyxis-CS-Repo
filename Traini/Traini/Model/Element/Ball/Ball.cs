@@ -28,11 +28,20 @@ namespace Traini.Model.Element
         public IHitbox Hitbox { get; }
         public IVector Pace { get; set; }
 
-        public Ball(int id, BallType type, ICoord position, IVector pace)
+        public Ball(ICoord position, IDimension dimension) : this(position, dimension, new Vector())
+        {
+        }
+
+        public Ball(ICoord position, IDimension dimension, IVector pace) : this(1, BallType.NormalBall, position, dimension, pace)
+        {
+        }
+
+        public Ball(int id, BallType type, ICoord position, IDimension dimension, IVector pace)
         {
             this.Id = id;
             this.Type = type;
             this.Position = position;
+            this.Dimension = dimension;
             this.Pace = pace;
             this.Hitbox = new BallHitbox(this);
         }
