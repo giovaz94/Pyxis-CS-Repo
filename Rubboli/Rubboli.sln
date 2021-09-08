@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Rubboli", "OOP_Rubboli\OOP_Rubboli.csproj", "{90B04FB6-A771-4DC2-9809-55EC46931A3C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{6777EC47-497D-4232-AFE1-DC00A82D5218}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{90B04FB6-A771-4DC2-9809-55EC46931A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90B04FB6-A771-4DC2-9809-55EC46931A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90B04FB6-A771-4DC2-9809-55EC46931A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6777EC47-497D-4232-AFE1-DC00A82D5218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6777EC47-497D-4232-AFE1-DC00A82D5218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6777EC47-497D-4232-AFE1-DC00A82D5218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6777EC47-497D-4232-AFE1-DC00A82D5218}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

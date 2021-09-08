@@ -2,12 +2,9 @@ namespace OOP_Rubboli.util
 {
     public class Pair<TFirst, TSecond> : IPair<TFirst, TSecond> {
         
-            private TFirst _first;
-            private TSecond _second;
-            
             public Pair(TFirst first, TSecond second) {
-                this._first = first;
-                this._second = second;
+                this.First = first;
+                this.Second = second;
             }
 
             public TFirst First
@@ -24,7 +21,7 @@ namespace OOP_Rubboli.util
             
             public override string ToString()
             {
-                return "<" + _first + "," + _second + ">";
+                return "<" + this.First + "," + this.Second + ">";
             }
     }
 }

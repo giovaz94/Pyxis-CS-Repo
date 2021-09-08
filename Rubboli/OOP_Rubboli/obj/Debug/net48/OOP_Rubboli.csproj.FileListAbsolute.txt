@@ -1,0 +1,8 @@
+/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/OOP_Rubboli/bin/Debug/net48/OOP_Rubboli.dll
+/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/OOP_Rubboli/bin/Debug/net48/OOP_Rubboli.pdb
+/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/OOP_Rubboli/obj/Debug/net48/OOP_Rubboli.csprojAssemblyReference.cache
+/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/OOP_Rubboli/obj/Debug/net48/OOP_Rubboli.csproj.CoreCompileInputs.cache
+/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/OOP_Rubboli/obj/Debug/net48/OOP_Rubboli.AssemblyInfoInputs.cache
+/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/OOP_Rubboli/obj/Debug/net48/OOP_Rubboli.AssemblyInfo.cs
+/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/OOP_Rubboli/obj/Debug/net48/OOP_Rubboli.dll
+/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/OOP_Rubboli/obj/Debug/net48/OOP_Rubboli.pdb
