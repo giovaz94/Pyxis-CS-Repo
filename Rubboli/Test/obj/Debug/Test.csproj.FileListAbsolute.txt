@@ -1,0 +1,6 @@
+/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/Test/bin/Debug/Test.dll
+/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/Test/bin/Debug/Test.pdb
+/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/Test/obj/Debug/Test.csprojAssemblyReference.cache
+/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/Test/obj/Debug/Test.csproj.CoreCompileInputs.cache
+/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/Test/obj/Debug/Test.dll
+/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/Test/obj/Debug/Test.pdb

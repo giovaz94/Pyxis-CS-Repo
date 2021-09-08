@@ -1,0 +1,45 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/OOP_Rubboli/OOP_Rubboli.csproj": {}
+  },
+  "projects": {
+    "/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/OOP_Rubboli/OOP_Rubboli.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/OOP_Rubboli/OOP_Rubboli.csproj",
+        "projectName": "OOP_Rubboli",
+        "projectPath": "/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/OOP_Rubboli/OOP_Rubboli.csproj",
+        "packagesPath": "/Users/luca/.nuget/packages/",
+        "outputPath": "/Users/luca/Desktop/Luca/Università/Corsi/Programmazione ad Oggetti/Pyxis-CS-Repo/Rubboli/OOP_Rubboli/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/luca/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "targetAlias": "net48",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "targetAlias": "net48",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
