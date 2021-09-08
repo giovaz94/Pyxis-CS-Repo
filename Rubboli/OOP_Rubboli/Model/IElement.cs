@@ -7,18 +7,15 @@ namespace OOP_Rubboli
         /// <summary>
         /// Returns the Element's Dimension.
         /// </summary>
-        Dimension Dimension
-        {
-            get;
-        }
+        Dimension GetDimension();
 
         /// <summary>
-        /// Sets the Element's Height.
+        /// Sets the Element's height.
         /// </summary>
-        double Height
-        {
-            set;
-        }
+        /// <param name="inputHeight">
+        /// The input height.
+        /// </param>
+        void SetHeight(double inputHeight);
         
         /// <summary>
         /// Increases the Element's height value.
@@ -37,22 +34,30 @@ namespace OOP_Rubboli
         void IncreaseWidth(double increaseValue);
 
         /// <summary>
-        /// Returns and sets the Element's Pace.
+        /// Returns the Element's Pace.
         /// </summary>
-        IVector Pace
-        {
-            get;
-            set;
-        }
+        IVector GetPace();
+        
+        /// <summary>
+        /// Sets the Element's Pace.
+        /// </summary>
+        /// <param name="inputPace">
+        /// The input pace.
+        /// </param>
+        void SetPace(IVector inputPace);
 
         /// <summary>
-        /// Returns and sets the Element's Position.
+        /// Returns the Element's Position.
         /// </summary>
-        ICoord Position
-        {
-            get;
-            set;
-        }
+        ICoord GetPosition();
+
+        /// <summary>
+        /// Sets the Element's Position.
+        /// </summary>
+        /// <param name="inputPosition">
+        /// The input position.
+        /// </param>
+        void SetPosition(ICoord inputPosition);
 
         /// <summary>
         /// Executes an update on the Element.
@@ -65,17 +70,11 @@ namespace OOP_Rubboli
         /// <summary>
         /// Returns the update time multiplier.
         /// </summary>
-        int UpdateTimeMultiplier
-        {
-            get;
-        }
+        int GetUpdateTimeMultiplier();
 
         /// <summary>
         /// Sets the Element's Width.
         /// </summary>
-        double Width
-        {
-            set;
-        }
+        void SetWidth(double inputWidth);
     }
 }

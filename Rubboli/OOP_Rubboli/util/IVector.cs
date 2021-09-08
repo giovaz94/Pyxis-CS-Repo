@@ -30,21 +30,29 @@ namespace OOP_Rubboli.util
         double GetModule();
 
         /// <summary>
-        /// Returns and sets the Vector's x component.
+        /// Returns the Vector's x component.
         /// </summary>
-        double X
-        {
-            get;
-            set;
-        }
+        double GetX();
 
         /// <summary>
-        /// Returns and sets the Vector's y component.
+        /// Sets the Vector's x component.
         /// </summary>
-        double Y
-        {
-            get;
-            set;
-        }
+        /// <param name="xValue">
+        /// The input component.
+        /// </param>
+        void SetX(double xValue);
+
+        /// <summary>
+        /// Returns the Vector's y component.
+        /// </summary>
+        double GetY();
+
+        /// <summary>
+        /// Sets the Vector's y component.
+        /// </summary>
+        /// <param name="yValue">
+        /// The input component.
+        /// </param>
+        void SetY(double yValue);
     }
 }

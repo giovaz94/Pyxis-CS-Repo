@@ -17,20 +17,35 @@ namespace OOP_Rubboli
             this.Id = inputId;
         }
 
-        public int Id { get; }
+        private int Id { get; }
 
-        public IVector Pace
+        private BallType Type { get; set; }
+
+        public int GetId()
+        {
+            return this.Id;
+        }
+
+        private IVector Pace
         {
             get { return this._pace.CopyOf(); }
             set { this._pace = value; }
         }
 
-        public BallType Type { get; set; }
+        public override IVector GetPace()
+        {
+            return this.Pace;
+        }
+
+        public override void SetPace(IVector inputPace)
+        {
+            this.Pace = inputPace;
+        }
 
         public new void Update(double dt)
         {
-            this.Position.X = this.Position.X + dt * this.Pace.X * UpdateTimeMultiplier;
-            this.Position.Y = this.Position.Y + dt * this.Pace.Y * UpdateTimeMultiplier;
+            this.GetPosition().SetX(this.GetPosition().GetX() + dt * this.Pace.GetX() * this.GetUpdateTimeMultiplier());
+            this.GetPosition().SetY(this.GetPosition().GetY() + dt * this.Pace.GetY() * this.GetUpdateTimeMultiplier());
         }
 
         public override bool Equals(Object o)
@@ -55,6 +70,16 @@ namespace OOP_Rubboli
             var hashed = md5Hasher.ComputeHash(Encoding.UTF8.GetBytes(this.ToString()));
             var ivalue = BitConverter.ToInt32(hashed, 0);
             return ivalue;
+        }
+
+        public new BallType GetType()
+        {
+            return this.Type;
+        }
+
+        public void SetType(BallType inputType)
+        {
+            this.Type = inputType;
         }
 
         public override string ToString()

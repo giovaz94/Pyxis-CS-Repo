@@ -12,17 +12,19 @@ namespace Test
             set;
         }
 
+        private IBallBuilder _ballBuilder; 
         private ICoord _startingCoord;
         private IVector _startingPace;
-        private int dt;
+        private int _dt;
 
         [SetUp]
         public void Setup()
         {
+            this._ballBuilder = new BallBuilder();
             this._startingCoord = new Coord(1, 1);
             this._startingPace = new Vector(5, 10);
-            this.dt = 200;
-            this.TestingBall = new BallBuilder().InitialPosition(this._startingCoord)
+            this._dt = 200;
+            this.TestingBall = this._ballBuilder.InitialPosition(this._startingCoord)
                 .Pace(this._startingPace)
                 .Id(1)
                 .Build();
@@ -30,36 +32,23 @@ namespace Test
         
         [Test]
         public void TestType() {
-            Assert.AreEqual(this.TestingBall.Type, BallType.NormalBall);
-            this.TestingBall.Type = BallType.AtomicBall;
-            Assert.AreEqual(this.TestingBall.Type, BallType.AtomicBall);
-            this.TestingBall.Type = BallType.SteelBall;
-            Assert.AreNotEqual(this.TestingBall.Type, BallType.AtomicBall);
-            Assert.AreEqual(this.TestingBall.Type, BallType.SteelBall);
+            Assert.AreEqual(this.TestingBall.GetType(), BallType.NormalBall);
+            this.TestingBall.SetType(BallType.AtomicBall);
+            Assert.AreEqual(this.TestingBall.GetType(), BallType.AtomicBall);
+            this.TestingBall.SetType(BallType.SteelBall);
+            Assert.AreNotEqual(this.TestingBall.GetType(), BallType.AtomicBall);
+            Assert.AreEqual(this.TestingBall.GetType(), BallType.SteelBall);
         }
         
         [Test]
         public void testPace() {
-            Assert.AreEqual(this.TestingBall.Pace, this._startingPace);
-            IVector modifyPace = this.TestingBall.Pace;
-            modifyPace.X = 4.0;
-            modifyPace.Y = 6.2;
-            Assert.AreNotEqual(this.TestingBall.Pace, modifyPace);
-            this.TestingBall.Pace = modifyPace;
-            Assert.AreEqual(this.TestingBall.Pace, modifyPace);
-        }
-        
-        [Test]
-        public void testUpdate() {
-            ICoord coordinates = this.TestingBall.Position;
-            assertEquals(this.ball1.getPosition(), coordinates);
-            this.ball1.update(this.dt);
-            final double multiplier = this.ball1.getType().getPaceMultiplier();
-            final double modX = coordinates.getX() + (this.ball1.getPace().getX() * multiplier * this.dt * this.ball1.getUpdateTimeMultiplier());
-            final double modY = coordinates.getY() + (this.ball1.getPace().getY() * multiplier * this.dt * this.ball1.getUpdateTimeMultiplier());
-            Coord updatedCoordinates = new CoordImpl(modX, modY);
-            assertNotEquals(this.ball1.getPosition(), coordinates);
-            assertEquals(this.ball1.getPosition(), updatedCoordinates);
+            Assert.AreEqual(this.TestingBall.GetPace(), this._startingPace);
+            IVector modifyPace = this.TestingBall.GetPace();
+            modifyPace.SetX(4.0);
+            modifyPace.SetY(6.2);
+            Assert.AreNotEqual(this.TestingBall.GetPace(), modifyPace);
+            this.TestingBall.SetPace(modifyPace);
+            Assert.AreEqual(this.TestingBall.GetPace(), modifyPace);
         }
     }
 }

@@ -56,7 +56,7 @@ namespace OOP_Rubboli
             return this;
         }
 
-        public IBall Build()
+        public Ball Build()
         {
             if (this.IsNull())
             {

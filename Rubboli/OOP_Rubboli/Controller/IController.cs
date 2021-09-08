@@ -5,9 +5,6 @@ namespace OOP_Rubboli
         /// <summary>
         /// Returns the View attached to the Controller.
         /// </summary>
-        IView View
-        {
-            get;
-        }
+        IView GetView();
     }
 }

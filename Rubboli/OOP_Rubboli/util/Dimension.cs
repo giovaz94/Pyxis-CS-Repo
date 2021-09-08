@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OOP_Rubboli.util
 {
-    public class Dimension
+    public class Dimension : IDimension
     {
         private Pair<double, double> _internalPair;
 
@@ -21,7 +21,17 @@ namespace OOP_Rubboli.util
         {
             return new Dimension(this.Width, this.Height);
         }
-        
+
+        public double GetHeight()
+        {
+            return this.Height;
+        }
+
+        public void SetHeight(double inputHeight)
+        {
+            this.Height = inputHeight;
+        }
+
         public override bool Equals(Object o)
         {
             if (this == o)
@@ -44,10 +54,10 @@ namespace OOP_Rubboli.util
             return ivalue;
         }
 
-        public double Height
+        private double Height
         {
-            get { return this._internalPair.Second; }
-            set { this._internalPair.Second = value; }
+            get { return this._internalPair.GetSecond(); }
+            set { this._internalPair.SetSecond(value); }
         }
     
         public void IncreaseHeight(double increaseValue)
@@ -59,16 +69,27 @@ namespace OOP_Rubboli.util
         {
             this.Width = this.Width + increaseValue;
         }
-    
-        public override string ToString()
+
+        public double GetWidth()
         {
-            return "Dimension X: " + this._internalPair.First + " and Y: " + this._internalPair.Second;
+            return this.Width;
         }
 
-        public double Width
+        public void SetWidth(double inputWidth)
         {
-            get { return this._internalPair.First; }
-            set { this._internalPair.First = value; }
+            this.Width = inputWidth;
+        }
+
+        public override string ToString()
+        {
+            return "Dimension X: " + this._internalPair.GetFirst() + " and Y: " + 
+                   this._internalPair.GetSecond();
+        }
+
+        private double Width
+        {
+            get { return this._internalPair.GetFirst(); }
+            set { this._internalPair.SetFirst(value); }
         }
     }
 }

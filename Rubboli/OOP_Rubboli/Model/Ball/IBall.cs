@@ -8,28 +8,32 @@ namespace OOP_Rubboli
         /// <summary>
         /// Returns the Ball's id.
         /// </summary>
-        int Id
-        {
-            get;
-        }
+        int GetId();
 
         /// <summary>
-        /// Returns and sets the Ball's pace.
+        /// Returns the Ball's pace.
         /// </summary>
-        IVector Pace
-        {
-            get;
-            set;
-        }
+        IVector GetPace();
         
         /// <summary>
-        /// Returns and sets the Ball's type.
+        /// Sets the Ball's pace.
         /// </summary>
-        BallType Type
-        {
-            get;
-            set;
-        }
-
+        /// <param name="inputPace">
+        /// The input pace.
+        /// </param>
+        void SetPace(IVector inputPace);
+        
+        /// <summary>
+        /// Returns the Ball's type.
+        /// </summary>
+        BallType GetType();
+        
+        /// <summary>
+        /// Sets the Ball's type.
+        /// </summary>
+        /// <param name="inputType">
+        /// The input type.
+        /// </param>
+        void SetType(BallType inputType);
     }
 }

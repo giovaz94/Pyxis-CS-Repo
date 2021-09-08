@@ -78,34 +78,54 @@ namespace OOP_Rubboli.util
 
         public void SumVector(Vector inputVector, double multiplier)
         {
-            this.SumValues(inputVector.X * multiplier, inputVector.Y * multiplier);
+            this.SumValues(inputVector.GetX() * multiplier, inputVector.GetY() * multiplier);
         }
 
         public void SumXValue(double xValue)
         {
-            this._internalPair.First = this._internalPair.First + xValue;
+            this._internalPair.SetFirst(this._internalPair.GetFirst() + xValue);
         }
 
         public void SumYValue(double yValue)
         {
-            this._internalPair.Second = this._internalPair.Second + yValue;
+            this._internalPair.SetSecond(this._internalPair.GetSecond() + yValue);
+        }
+
+        public double GetX()
+        {
+            return this.X;
+        }
+
+        public void SetX(double xValue)
+        {
+            this.X = xValue;
+        }
+
+        public double GetY()
+        {
+            return this.Y;
+        }
+
+        public void SetY(double yValue)
+        {
+            this.Y = yValue;
         }
 
         public override String ToString()
         {
-            return "Position X: " + this._internalPair.First + " and Y: " + this._internalPair.Second;
+            return "Position X: " + this._internalPair.GetFirst() + " and Y: " + this._internalPair.GetSecond();
         }
 
-        public double X
+        private double X
         {
-            get { return this._internalPair.First; }
-            set { this._internalPair.First = value; }
+            get { return this._internalPair.GetFirst(); }
+            set { this._internalPair.SetFirst(value); }
         }
 
-        public double Y
+        private double Y
         {
-            get { return this._internalPair.Second; }
-            set { this._internalPair.Second = value; }
+            get { return this._internalPair.GetSecond(); }
+            set { this._internalPair.SetSecond(value); }
         }
     }
 }

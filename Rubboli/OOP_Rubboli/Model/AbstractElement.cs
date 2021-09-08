@@ -13,16 +13,26 @@ namespace OOP_Rubboli
             this.Position = inputPosition;
         }
         
-        public Dimension Dimension
+        private Dimension Dimension
         {
             get { return this._dimension.CopyOf(); }
         }
 
-        public double Height
+        private double Height
         {
-            set { this._dimension.Height = value; }
+            set { this._dimension.SetHeight(value); }
         }
-        
+
+        public Dimension GetDimension()
+        {
+            return this.Dimension;
+        }
+
+        public void SetHeight(double inputHeight)
+        {
+            this.Height = inputHeight;
+        }
+
         public void IncreaseHeight(double increaseValue)
         {
             this._dimension.IncreaseHeight(increaseValue);
@@ -33,7 +43,20 @@ namespace OOP_Rubboli
             this._dimension.IncreaseWidth(increaseValue);
         }
 
-        public ICoord Position
+        public abstract IVector GetPace();
+
+        public abstract void SetPace(IVector inputPace);
+        public ICoord GetPosition()
+        {
+            return this.Position;
+        }
+
+        public void SetPosition(ICoord inputPosition)
+        {
+            this.Position = inputPosition;
+        }
+
+        private ICoord Position
         {
             get { return this._position.CopyOf(); }
             set { this._position = value; }
@@ -44,14 +67,24 @@ namespace OOP_Rubboli
             throw new System.NotImplementedException();
         }
 
-        public int UpdateTimeMultiplier
+        public int GetUpdateTimeMultiplier()
         {
-            get;
+            return UpdateTimeMultiplier;
         }
 
-        public double Width
+        public void SetWidth(double inputWidth)
         {
-            set { this._dimension.Width = value; }
+            this.Width = inputWidth;
+        }
+
+        private int UpdateTimeMultiplier
+        {
+            get { return this.UpdateTimeMultiplier; }
+        }
+
+        private double Width
+        {
+            set { this._dimension.SetWidth(value); }
         }
     }
 }

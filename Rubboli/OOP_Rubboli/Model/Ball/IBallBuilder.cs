@@ -21,7 +21,7 @@ namespace OOP_Rubboli
         /// <returns>
         /// The Ball.
         /// </returns>
-        IBall Build();
+        Ball Build();
 
         /// <summary>
         /// Sets the Ball's id.

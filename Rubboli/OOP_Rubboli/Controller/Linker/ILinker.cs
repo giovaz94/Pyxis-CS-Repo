@@ -11,10 +11,7 @@ namespace OOP_Rubboli
         /// <summary>
         /// Returns the instance of GameState.
         /// </summary>
-        IGameState GameState 
-        {
-            get;
-        }
+        IGameState GetGameState(); 
 
         /// <summary>
         /// Adds a Command to the list of commands that a player can input.
@@ -35,11 +32,15 @@ namespace OOP_Rubboli
         /// <summary>
         /// Returns the maximum level reached by the player during the actual game session.
         /// </summary>
-        int MaximumLevelReached
-        {
-            get;
-            set;
-        }
+        int GetMaximumLevelReached();
+        
+        /// <summary>
+        /// Sets the maximum level reached by the player during the actual game session.
+        /// </summary>
+        /// <param name="maxLevelReached">
+        /// The maximum level reached.
+        /// </param>
+        void SetMaximumLevelReached(int maxLevelReached);
         
         /// <summary>
         /// Loads the MenuView.
@@ -72,13 +73,17 @@ namespace OOP_Rubboli
         void Run();
         
         /// <summary>
-        /// Sets and returns the SceneHandler.
+        /// Returns the SceneHandler.
         /// </summary>
-        ISceneHandler SceneHandler
-        {
-            get;
-            set;
-        }
+        ISceneHandler GetSceneHandler();
+        
+        /// <summary>
+        /// Sets the Linker's SceneHandler.
+        /// </summary>
+        /// <param name="inputSceneHandler">
+        /// The SceneHandler.
+        /// </param>
+        void SetSceneHandler(ISceneHandler inputSceneHandler);
         
         /// <summary>
         /// Loads the SelectLevelView.

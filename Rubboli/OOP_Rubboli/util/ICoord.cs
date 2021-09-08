@@ -102,21 +102,29 @@ namespace OOP_Rubboli.util
         void SumYValue(double yValue);
 
         /// <summary>
-        /// Returns and sets the X value.
+        /// Returns the X value.
         /// </summary>
-        double X
-        {
-            get;
-            set;
-        }
+        double GetX();
         
         /// <summary>
-        /// Returns and sets the Y value.
+        /// Sets the X value.
         /// </summary>
-        double Y
-        {
-            get;
-            set;
-        }
+        /// <param name="xValue">
+        /// The X value.
+        /// </param>
+        void SetX(double xValue);
+        
+        /// <summary>
+        /// Returns the Y value.
+        /// </summary>
+        double GetY();
+
+        /// <summary>
+        /// Sets the Y value.
+        /// </summary>
+        /// <param name="yValue">
+        /// The Y value.
+        /// </param>
+        void SetY(double yValue);
     }
 }

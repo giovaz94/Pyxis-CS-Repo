@@ -17,8 +17,8 @@ namespace OOP_Rubboli
 
         private bool ConditionInsertCommand()
         {
-            bool isRunning = this._gameState.State == StateEnum.Run;
-            bool isWaitingForStartingCommand = this._gameState.State
+            bool isRunning = this._gameState.GetState() == StateEnum.Run;
+            bool isWaitingForStartingCommand = this._gameState.GetState()
                                                   == StateEnum.WaitingForStartingCommand;
             return isRunning || isWaitingForStartingCommand;
         }
@@ -40,14 +40,19 @@ namespace OOP_Rubboli
         
         public void EndLevel()
         {
-            if (this._gameState.State != StateEnum.Pause) {
-                this._gameState.State = StateEnum.Pause;
+            if (this._gameState.GetState() != StateEnum.Pause) {
+                this._gameState.SetState(StateEnum.Pause);
             }
             this._gameState.UpdateTotalScore();
             this.SwitchScene(SceneType.EndLevelScene);
         }
 
-        public IGameState GameState
+        public IGameState GetGameState()
+        {
+            return this.GameState;
+        }
+
+        private IGameState GameState
         {
             get { return this._gameState; }
         }
@@ -65,7 +70,17 @@ namespace OOP_Rubboli
             this._gameLoop.AddCommand(command);
         }
 
-        public int MaximumLevelReached
+        public int GetMaximumLevelReached()
+        {
+            return this.MaximumLevelReached;
+        }
+
+        public void SetMaximumLevelReached(int maxLevelReached)
+        {
+            this.MaximumLevelReached = maxLevelReached;
+        }
+
+        private int MaximumLevelReached
         {
             get;
             set;
@@ -74,13 +89,13 @@ namespace OOP_Rubboli
         public void Menu()
         {
             this.SwitchScene(SceneType.MenuScene);
-            if (this._gameState.State == StateEnum.Pause)
+            if (this._gameState.GetState() == StateEnum.Pause)
             {
-                int actualLevelReached = this._gameState.CurrentLevel.LevelNumber;
-                bool levelCompleted = this._gameState.CurrentLevel.LevelStatus
+                int actualLevelReached = this._gameState.GetCurrentLevel().GetLevelNumber();
+                bool levelCompleted = this._gameState.GetCurrentLevel().GetLevelStatus()
                                          == LevelStatus.SuccessfullyCompleted;
                 bool isLastLevel = actualLevelReached == this._gameState.
-                    LevelIterator.Size();
+                    GetLevelIterator().Size();
                 if (!isLastLevel && levelCompleted)
                 {
                     actualLevelReached++;
@@ -88,15 +103,15 @@ namespace OOP_Rubboli
                 this.MaximumLevelReached = Math.Max(this.MaximumLevelReached,
                     actualLevelReached);
                 this._gameState.Reset();
-                this._gameState.State = StateEnum.WaitingForNewGame;
+                this._gameState.SetState(StateEnum.WaitingForNewGame);
             }
         }
 
         public void Pause()
         {
-            if (this._gameState.State != StateEnum.Pause) {
-                this._gameState.State = StateEnum.Pause;
-                this._gameState.CurrentLevel.Arena.PowerupHandler.Pause();
+            if (this._gameState.GetState() != StateEnum.Pause) {
+                this._gameState.SetState(StateEnum.Pause);
+                this._gameState.GetCurrentLevel().GetArena().GetPowerupHandler().Pause();
             }
             this.SwitchScene(SceneType.PauseScene);
         }
@@ -108,26 +123,36 @@ namespace OOP_Rubboli
 
         public void Render()
         {
-            if (this._sceneHandler.CurrentController.View is IRenderableView) {
-                ((IRenderableView) this._sceneHandler.CurrentController.View).Render();
+            if (this._sceneHandler.GetCurrentController().GetView() is IRenderableView) {
+                ((IRenderableView) this._sceneHandler.GetCurrentController().GetView()).Render();
             }
         }
 
         public void Resume()
         {
             this.SwitchScene(SceneType.GameScene);
-            this._gameState.State = StateEnum.WaitingForStartingCommand;
-            this._gameState.CurrentLevel.Arena.PowerupHandler.Resume();
+            this._gameState.SetState(StateEnum.WaitingForStartingCommand);
+            this._gameState.GetCurrentLevel().GetArena().GetPowerupHandler().Resume();
         }
 
         public void Run()
         {
             this.SwitchScene(SceneType.GameScene);
             this.Render();
-            this._gameState.State = StateEnum.WaitingForStartingCommand;
+            this._gameState.SetState(StateEnum.WaitingForStartingCommand);
         }
 
-        public ISceneHandler SceneHandler
+        public ISceneHandler GetSceneHandler()
+        {
+            return this.SceneHandler;
+        }
+
+        public void SetSceneHandler(ISceneHandler inputSceneHandler)
+        {
+            this.SceneHandler = inputSceneHandler;
+        }
+
+        private ISceneHandler SceneHandler
         {
             get { return this._sceneHandler; }
             set { this._sceneHandler = value; }

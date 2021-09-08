@@ -11,13 +11,17 @@ namespace OOP_Rubboli.util
         Dimension CopyOf();
 
         /// <summary>
-        /// Returns and sets the Dimension's height.
+        /// Returns the Dimension's height.
         /// </summary>
-        double Height
-        {
-            get;
-            set;
-        }
+        double GetHeight();
+
+        /// <summary>
+        /// Sets the Dimension's height.
+        /// </summary>
+        /// <param name="inputHeight">
+        /// The input height.
+        /// </param>
+        void SetHeight(double inputHeight);
         
         /// <summary>
         /// Increases the height value.
@@ -36,12 +40,16 @@ namespace OOP_Rubboli.util
         void IncreaseWidth(double increaseValue);
 
         /// <summary>
-        /// Returns and sets the Dimension's width.
+        /// Returns the Dimension's width.
         /// </summary>
-        double Width
-        {
-            get;
-            set;
-        }
+        double GetWidth();
+
+        /// <summary>
+        /// Sets the the Dimension's width.
+        /// </summary>
+        /// <param name="inputWidth">
+        /// The input width.
+        /// </param>
+        void SetWidth(double inputWidth);
     }
 }

@@ -18,8 +18,8 @@ namespace OOP_Rubboli.util
 
         public Vector CopyOf()
         {
-            double firstComponent = this._components.First;
-            double secondComponent = this._components.Second;
+            double firstComponent = this._components.GetFirst();
+            double secondComponent = this._components.GetSecond();
             return new Vector(firstComponent, secondComponent);
         }
 
@@ -34,15 +34,35 @@ namespace OOP_Rubboli.util
                 return false;
             }
             Vector vector = (Vector) o;
-            return Object.Equals(_components, vector._components);
+            return Object.Equals(this._components, vector._components);
         }
     
         public double GetModule()
         {
-            return Math.Sqrt(Math.Pow(this._components.First, 2)
-                    + Math.Pow(this._components.Second, 2));
+            return Math.Sqrt(Math.Pow(this._components.GetFirst(), 2)
+                    + Math.Pow(this._components.GetSecond(), 2));
         }
-    
+
+        public double GetX()
+        {
+            return this.X;
+        }
+
+        public void SetX(double xValue)
+        {
+            this.X = xValue;
+        }
+
+        public double GetY()
+        {
+            return this.Y;
+        }
+
+        public void SetY(double yValue)
+        {
+            this.Y = yValue;
+        }
+
         public override int GetHashCode()
         {
             var md5Hasher = MD5.Create();
@@ -59,16 +79,16 @@ namespace OOP_Rubboli.util
             return new Vector(module * cos, module * sin);
         }
 
-        public double X
+        private double X
         {
-            get { return this._components.First; }
-            set { this._components.First = value; }
+            get { return this._components.GetFirst(); }
+            set { this._components.SetFirst(value); }
         }
 
-        public double Y
+        private double Y
         {
-            get { return this._components.Second; }
-            set { this._components.Second = value; }
+            get { return this._components.GetSecond(); }
+            set { this._components.SetSecond(value); }
         }
     }
 }

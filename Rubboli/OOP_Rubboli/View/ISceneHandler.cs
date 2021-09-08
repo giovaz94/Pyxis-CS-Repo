@@ -3,13 +3,17 @@ namespace OOP_Rubboli
     public interface ISceneHandler
     {
         /// <summary>
-        /// Returns and sets the SceneHandler's current Controller.
+        /// Returns the SceneHandler's current Controller.
         /// </summary>
-        IController CurrentController
-        {
-            get;
-            set;
-        }
+        IController GetCurrentController();
+
+        /// <summary>
+        /// Sets the SceneHandler's current Controller.
+        /// </summary>
+        /// <param name="inputController">
+        /// The input Controller.
+        /// </param>
+        void SetCurrentController(IController inputController);
 
         /// <summary>
         /// Loads and shows the input Scene.
