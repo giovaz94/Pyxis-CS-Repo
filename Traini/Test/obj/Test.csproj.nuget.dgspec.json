@@ -1,35 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Test\\Test.csproj": {}
+    "/Users/giovanniantonioni/Desktop/Pyxis-CS-Repo/Traini/Test/Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Test\\Test.csproj": {
+    "/Users/giovanniantonioni/Desktop/Pyxis-CS-Repo/Traini/Test/Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Test\\Test.csproj",
+        "projectUniqueName": "/Users/giovanniantonioni/Desktop/Pyxis-CS-Repo/Traini/Test/Test.csproj",
         "projectName": "Test",
-        "projectPath": "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Test\\Test.csproj",
-        "packagesPath": "C:\\Users\\UTENTE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Test\\obj\\",
+        "projectPath": "/Users/giovanniantonioni/Desktop/Pyxis-CS-Repo/Traini/Test/Test.csproj",
+        "packagesPath": "/Users/giovanniantonioni/.nuget/packages/",
+        "outputPath": "/Users/giovanniantonioni/Desktop/Pyxis-CS-Repo/Traini/Test/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\UTENTE\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/giovanniantonioni/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Traini\\Traini.csproj": {
-                "projectPath": "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Traini\\Traini.csproj"
+              "/Users/giovanniantonioni/Desktop/Pyxis-CS-Repo/Traini/Traini/Traini.csproj": {
+                "projectPath": "/Users/giovanniantonioni/Desktop/Pyxis-CS-Repo/Traini/Traini/Traini.csproj"
               }
             }
           }
@@ -76,28 +74,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/giovanniantonioni/.dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Traini\\Traini.csproj": {
+    "/Users/giovanniantonioni/Desktop/Pyxis-CS-Repo/Traini/Traini/Traini.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Traini\\Traini.csproj",
+        "projectUniqueName": "/Users/giovanniantonioni/Desktop/Pyxis-CS-Repo/Traini/Traini/Traini.csproj",
         "projectName": "Traini",
-        "projectPath": "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Traini\\Traini.csproj",
-        "packagesPath": "C:\\Users\\UTENTE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UTENTE\\source\\repos\\Pyxis-CS-Repo\\Traini\\Traini\\obj\\",
+        "projectPath": "/Users/giovanniantonioni/Desktop/Pyxis-CS-Repo/Traini/Traini/Traini.csproj",
+        "packagesPath": "/Users/giovanniantonioni/.nuget/packages/",
+        "outputPath": "/Users/giovanniantonioni/Desktop/Pyxis-CS-Repo/Traini/Traini/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\UTENTE\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/giovanniantonioni/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -130,7 +126,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/giovanniantonioni/.dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,6 +1,11 @@
 ﻿
 namespace Traini.Model.Element.PadElement
 {
+    /// <summary>
+    /// Please note that this interface, and the relative implementations, are not my competence
+    /// in the project goals.
+    /// This is used only for simulating the interactions Level.
+    /// </summary>
     public interface IPad : IElement
     {
         /// <summary>
